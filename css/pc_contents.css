@@ -1,0 +1,993 @@
+@charset "utf-8";
+
+/*オーバーレイ用*/
+.body_fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  overflow: scroll;
+}
+
+
+.index__bignews_list {
+  padding: 8px 0 8px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.index__bignews_list_item a:hover {
+  filter: brightness(1.2);
+}
+.index__bignews_list_item a {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 3px 15px;
+  text-align: center;
+  line-height: 1.4;
+  text-decoration: underline;
+}
+
+
+
+
+.index__key_block {
+  background: #B2ECFF;
+  overflow: hidden;
+  position: absolute;
+  height: 530px;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.index__key_image picture img,
+.index__key_image picture source {
+  min-width: 1500px;
+  width: 100%;
+  height: 530px;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.index__search {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto 72px;
+  max-width: 1000px;
+  padding: 335px 0 0;
+}
+
+.index__search_block {
+  margin: 0 15px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 2px rgba(0,0,0,.4);
+}
+.index__search_title {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: #fff100;
+  padding: 14px 10px 10px;
+  text-align: center;
+}
+
+.index__search_set {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  padding: 11px 0; 
+}
+.index__search_list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  flex-grow: 1;
+  padding: 0 0 0 15px;
+}
+.index__search_list_item {
+  width: calc(100% / 4);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  position: relative;
+  height: 75px;
+  max-width: 182px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.index__search_list_item:hover {
+color: #419ef0;
+}
+.index__search_list_item:nth-of-type(1),
+.index__search_list_item:nth-of-type(2) {
+  border-bottom: none;
+}
+.index__search_list_item:nth-of-type(n)::after {
+  content: "";
+  width: 1px;
+  height: calc(100% - 10px);
+  background: #cccccc;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px 0;
+}
+.index__search_list_item_txt {
+  flex-grow: 0;
+}
+.index__search_list_item i {
+  flex-shrink: 0;
+  margin: 0 5px 0 3px;
+}
+.index__search_list_item i img {
+  width: 32px;
+}
+.index__search_btn {
+  padding: 0 25px 0 25px;
+  flex-shrink: 0;
+}
+.index__search_btn button {
+  background: #fa4641;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 19px 28px;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  border-radius: 4px;
+  white-space: nowrap;
+  min-width: 180px;
+}
+.index__search_btn button:hover {
+  filter: brightness(1.3);
+}
+
+
+
+/*釣り船名で検索*/
+.index__keyword_search {
+  margin: 16px auto 0;
+}
+
+
+.index__news {
+  margin: 23px auto 0;
+}
+.index__news_list {
+  background: #ededed;
+  padding: 6px 0 6px;
+  margin: 0 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+.index__news_list_item a {
+  display: block;
+}
+.index__news_list_item a:hover {
+  opacity: .75;
+}
+.index__news_list_item em {
+  font-size: 1.6rem;
+}
+.index__news_list_item b {
+  font-size: 1.6rem;
+}
+.index__news_list_item span {
+  font-size: 1.6rem;
+}
+
+
+
+
+.index__notice_image a:hover {
+  filter: brightness(1.1);
+}
+
+
+/*よくあるご質問*/
+.index__pagefaq {
+  margin: 40px 0 0;
+}
+
+
+
+/*全国の人気情報*/
+.index__popular {
+  margin-top: 25px;
+}
+.index__popular_block {
+}
+.index__popular_block > *:not(:first-child) {
+  margin-top: 50px;
+}
+
+
+
+
+
+.index__advance_title {
+  color: #fff100;
+  font-size: 17px;
+  font-weight: bold;
+  background: #fa4641;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: calc(3em + 12px);
+  width: calc(3em + 12px);
+  border-radius: 100px;
+  margin: 0 7px 0 0;
+  white-space: nowrap;
+}
+.index__advance_title::after {
+  /*content: "";*/
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 0 14px 14px;
+  border-color: transparent transparent transparent #fa4641;
+  right: -14px;
+  top: 0;
+  position: absolute;
+}
+.index__advance_txt a {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  font-feature-settings: normal;
+  white-space: nowrap;
+  background: linear-gradient(transparent calc(100% - 5px), #1E84DD calc(100% - 5px), #1E84DD calc(100% - 4px), transparent calc(100% - 4px));
+  padding: 5px 0;
+}
+.index__advance_txt a:hover {
+  filter: brightness(1.2);
+}
+
+
+
+.index__overlay_block {
+  background: #FFF;
+  border-radius: 5px;
+  max-height: 80vh;
+  width: 100%;
+  padding: 20px 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  box-shadow: 0 0 15px rgba(0,0,0,.4);
+  position: relative;
+  max-width: 500px;
+}
+
+
+.index__overlay_close {
+  position: absolute;
+  top: -15px;
+  right: -17px;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.index__overlay_block_in {
+  width: 100%;
+  overflow: scroll;
+  padding: 10px 10px;
+}
+
+
+
+.index__overlay_search_area {
+  font-size: 16px;
+  margin-bottom: 80px;
+}
+
+.index__overlay_search_area_region > li {
+  font-size: 16px;
+  font-weight: bold;
+  background: #f0f0f0;
+  padding: 8px 10px 7px;
+  min-width: 60px;
+  margin: 0 4px 8px 4px;
+  text-align: center;
+  border: #cccccc 1px solid;
+  cursor: pointer;
+}
+.index__overlay_search_area_submit {
+  padding: 20px 10px 20px;
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+  width: calc(100% - 50px);
+}
+
+.index__overlay_search_date {
+  margin-bottom: 50px;
+}
+
+.index__overlay_search_fish {
+  margin-bottom: 50px;
+}
+
+.index__overlay_search_option {
+  margin-bottom: 120px;
+}
+
+.index__overlay_search_option_action {
+  padding: 13px 10px 20px;
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+  width: calc(100% - 50px);
+  border-top: #419ef0 1px solid;
+}
+
+
+
+
+
+
+/*セカンドオーバーレイ*/
+.index__second_overlay_inner {
+  padding: 62px 30px;
+}
+.index__second_overlay_block {
+  background: #FFF;
+  border-radius: 5px;
+  max-height: 80vh;
+  width: 100%;
+  padding: 20px 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  box-shadow: 0 0 15px rgba(0,0,0,.4);
+  position: relative;
+  max-width: 460px;
+}
+.index__second_overlay_close {
+  position: absolute;
+  top: -15px;
+  right: -17px;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+.index__second_overlay_block_in {
+  width: 100%;
+  overflow: scroll;
+  padding: 10px 10px;
+}
+
+
+
+
+
+
+
+
+
+/*地図リンク・並び替え*/
+.search__switch {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: flex-start;
+  padding: 15px 15px 20px 15px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.search__switch2_block {
+  padding-top: 26px;
+  padding-bottom: 1px;
+}
+.search__switch2_map_btn a {
+  padding: 8px 16px 0;
+}
+.search__switch2_map_btn a:hover {
+  filter: brightness(1.05);
+}
+
+
+
+
+/*釣り船検索条件*/
+.search__indicator {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 10px 2px rgba(0,0,0,.4);
+}
+.search__indicator_title {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: #fff100;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+
+.search__indicator_ship_nav_list_item a:hover,
+.search__indicator_ship_nav_list_item span:hover {
+  color: #419ef0;
+}
+
+
+.search__indicator_list {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+.search__indicator_list_item {
+  width: calc(100% / 4);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  position: relative;
+  height: 37px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.search__indicator_list_item:hover {
+  color: #419ef0;
+}
+.search__indicator_list_item i {
+  flex-shrink: 0;
+  margin: 0 7px 0 0;
+  display: block;
+}
+.search__indicator_list_item i img {
+  width: 32px;
+}
+.search__indicator_list_item_txt {
+  flex-grow: 0;
+  margin: 0 5px 0 0;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-start;
+  line-height: 1.2;
+  padding-top: 2px;
+}
+
+.search__switch_sort li a {
+  font-size: 16px;
+  display: block;
+  border-bottom: #000 1px solid;
+  padding: 13px 0 10px;
+  text-align: center;
+  color: #121212;
+}
+
+
+
+.search__shiplist_nodata {
+}
+.search__shiplist_nodata_image {
+  text-align: center;
+}
+.search__shiplist_nodata_image img {
+  width: auto;
+  max-width: 100%;
+}
+
+
+
+
+/*スライド用*/
+.search__shiplist_unit_key {
+  width: 285px;
+  margin: 0 22px 0 0;
+  flex-shrink: 0;
+}
+
+.search__shiplist_unit_key_link {
+}
+.search__shiplist_unit_key_link:hover {
+  filter: brightness(1.07);
+}
+
+
+.search__shiplist_unit_key_imagelist {
+  display: block;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+.search__shiplist_unit_key_imagelist li {
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.search__shiplist_unit_key_imagelist li:first-of-type {
+  opacity: 1;
+  position: relative;
+}
+.search__shiplist_unit_key_imagelist li::before {
+  content: "";
+  background: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+}
+.search__shiplist_unit_key_imagelist li:not(:first-of-type) {
+  margin: 0;
+}
+.search__shiplist_unit_key_imagelist li img {
+  width: 100%;
+}
+
+.search__shiplist_unit_key_info {
+  display: none;
+}
+
+.search__shiplist_unit_key_radio:checked:nth-of-type(2) ~ .search__shiplist_unit_key_link .search__shiplist_unit_key_imagelist li:nth-of-type(2),
+.search__shiplist_unit_key_radio:checked:nth-of-type(3) ~ .search__shiplist_unit_key_link .search__shiplist_unit_key_imagelist li:nth-of-type(3),
+.search__shiplist_unit_key_radio:checked:nth-of-type(4) ~ .search__shiplist_unit_key_link .search__shiplist_unit_key_imagelist li:nth-of-type(4),
+.search__shiplist_unit_key_radio:checked:nth-of-type(5) ~ .search__shiplist_unit_key_link .search__shiplist_unit_key_imagelist li:nth-of-type(5) {
+  opacity: 1;
+}
+
+.search__shiplist_unit_key_radio:checked:nth-of-type(1) ~ .search__shiplist_unit_key_thumbnail label:nth-of-type(1),
+.search__shiplist_unit_key_radio:checked:nth-of-type(2) ~ .search__shiplist_unit_key_thumbnail label:nth-of-type(2),
+.search__shiplist_unit_key_radio:checked:nth-of-type(3) ~ .search__shiplist_unit_key_thumbnail label:nth-of-type(3),
+.search__shiplist_unit_key_radio:checked:nth-of-type(4) ~ .search__shiplist_unit_key_thumbnail label:nth-of-type(4),
+.search__shiplist_unit_key_radio:checked:nth-of-type(5) ~ .search__shiplist_unit_key_thumbnail label:nth-of-type(5) {
+  box-shadow: 0 0 2px 0 rgba(255,94,0,1);
+  border-color: rgba(255,94,0,.7);
+}
+
+
+.search__shiplist_unit_key_radio {
+  display: none;
+}
+.search__shiplist_unit_key_thumbnail {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  margin: 6px 0 0;
+}
+.search__shiplist_unit_key_thumbnail label {
+  margin: 0 5px 0 0;
+  border: #fff 1px solid;
+}
+.search__shiplist_unit_key_thumbnail label img {
+  width: 51px;
+}
+
+.search__shiplist_unit_key_prev {
+  display: block;
+  position: absolute;
+  top: 95px;
+  left: 0;
+}
+.search__shiplist_unit_key_prev label {
+  display: none;
+  position: absolute;
+  transform: rotate(-90deg);
+  font-size: 20px;
+  background: #fff;
+  opacity: .7;
+}
+.search__shiplist_unit_key_next {
+  display: block;
+  position: absolute;
+  top: 95px;
+  right: 0;
+}
+.search__shiplist_unit_key_next label {
+  display: none;
+  position: absolute;
+  transform: rotate(90deg) translate(0,1em);
+  font-size: 20px;
+  background: #fff;
+  opacity: .7;
+}
+
+.search__shiplist_unit_key_radio:checked:nth-of-type(1) ~ .search__shiplist_unit_key_prev label:nth-of-type(5),
+.search__shiplist_unit_key_radio:checked:nth-of-type(1) ~ .search__shiplist_unit_key_next label:nth-of-type(2),
+
+.search__shiplist_unit_key_radio:checked:nth-of-type(2) ~ .search__shiplist_unit_key_prev label:nth-of-type(1),
+.search__shiplist_unit_key_radio:checked:nth-of-type(2) ~ .search__shiplist_unit_key_next label:nth-of-type(3),
+
+.search__shiplist_unit_key_radio:checked:nth-of-type(3) ~ .search__shiplist_unit_key_prev label:nth-of-type(2),
+.search__shiplist_unit_key_radio:checked:nth-of-type(3) ~ .search__shiplist_unit_key_next label:nth-of-type(4),
+
+.search__shiplist_unit_key_radio:checked:nth-of-type(4) ~ .search__shiplist_unit_key_prev label:nth-of-type(3),
+.search__shiplist_unit_key_radio:checked:nth-of-type(4) ~ .search__shiplist_unit_key_next label:nth-of-type(5),
+
+.search__shiplist_unit_key_radio:checked:nth-of-type(5) ~ .search__shiplist_unit_key_prev label:nth-of-type(4),
+.search__shiplist_unit_key_radio:checked:nth-of-type(5) ~ .search__shiplist_unit_key_next label:nth-of-type(1) {
+  display: block;
+}
+
+
+/*/スライド用*/
+
+
+
+
+/*プランなど*/
+
+.search__shiplist {
+  background: #f0f0f0;
+  padding: 20px 0;
+}
+
+.search__shiplist_unit {
+  padding: 25px;
+  margin: 0 0 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.05);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.search__shiplist_unit_detail {
+  display: none;
+}
+.search__shiplist_unit_plan {
+  flex-grow: 1;
+}
+
+.search__shiplist_unit_plan_list_item_link {
+  padding: 15px 25px 13px 2px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.search__shiplist_unit_plan_list_item_link:hover {
+  background-color: #f2fbff;
+}
+
+.search__shiplist_unit_plan_shipinfo {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 0 0 20px;
+}
+.search__shiplist_unit_plan_shipinfo_title {
+  flex-grow: 1;
+}
+.search__shiplist_unit_plan_shipinfo_title_name {
+}
+.search__shiplist_unit_plan_shipinfo_title_name_txt {
+  display: inline;
+}
+.search__shiplist_unit_plan_shipinfo_title_name_txt a {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  text-decoration: underline;
+  font-family: YuGothic, "Yu Gothic medium", "Hiragino Sans", Meiryo, "sans-serif";
+}
+.search__shiplist_unit_plan_shipinfo_title_name_txt a:hover {
+  text-decoration: none;
+  color: #419ef0;
+}
+.search__shiplist_unit_plan_shipinfo_title_name_pr {
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  vertical-align: super;
+  color: #595959;
+}
+.search__shiplist_unit_plan_shipinfo_title_address {
+  margin: 8px 0 0;
+}
+.search__shiplist_unit_plan_shipinfo_title_address li {
+  display: inline-block;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin: 6px 0 0;
+  white-space: nowrap;
+}
+.search__shiplist_unit_plan_shipinfo_title_address li:not(:first-of-type)::before {
+  content: "/ ";
+  margin: 0 0 0 .5em;
+}
+.search__shiplist_unit_plan_shipinfo_detail {
+  flex-shrink: 0;
+  margin: 0 0 0 20px;
+}
+.search__shiplist_unit_plan_shipinfo_detail_btn {
+}
+.search__shiplist_unit_plan_shipinfo_detail_btn a {
+  display: block;
+  background: #419ef0;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 13px 13px;
+  border-radius: 6px;
+}
+.search__shiplist_unit_plan_shipinfo_detail_btn a:hover {
+  filter: brightness(1.07);
+}
+
+.search__shiplist_unit_plan_list_item_info {
+  flex-grow: 1;
+  margin: 0 0 0 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+
+.search__shiplist_unit_plan_list_item_info_cost {
+  display: block;
+  margin: 0 20px 0 20px;
+}
+
+.search__shiplist_unit_plan_list_item_info_cost_advance {
+  height: calc(1em + 8px);
+  width: calc(3em + 9px);
+  margin: 0 0 3px 20px;
+  padding: 1px 0 0;
+}
+
+.search__shiplist_unit_plan_list_item_info_cost_price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, "sans-serif";
+  color: #fa4641;
+  white-space: nowrap;
+}
+.search__shiplist_unit_plan_list_item_info_cost_point {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, "sans-serif";
+  background: #fff100;
+  padding: 3px 8px;
+  border-radius: 50px;
+  margin: 4px 0 0 0;
+  display: inline-block;
+}
+
+.search__shiplist_unit_plan_list_item_info_title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #1a1a1a;
+  width: 231px;
+  flex-shrink: 0;
+}
+.search__shiplist_unit_plan_list_item_info_fishlist {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  margin: 0;
+}
+
+
+.search__shiplist_unit_plan_more span:hover {
+  /*color: #1E84DD;*/
+}
+
+
+
+.search__shiplist_unit_plan_ohter {
+  margin-top: 18px;
+}
+
+
+
+
+/*おすすめコメント*/
+.search__shiplist_unit_plan_recommend {
+  margin: -3px 10px 7px;
+  /*background: #ebf8ff;*/
+  /*border: rgba(20,130,227,.25) 1px solid;*/
+}
+
+
+
+
+/*お試しモニター中！*/
+.search__shiplist_unit_plan_trial {
+  padding: 0;
+  margin: -3px 10px 7px;
+}
+.search__shiplist_unit_plan_trial_block {
+  max-width: 970px;
+  margin: 0 auto;
+}
+.search__shiplist_unit_plan_trial_detail figure img {
+  width: 345px;
+}
+.search__shiplist_unit_plan_trial_detail_day {
+  top: 65%;
+  left: 8.2%;
+}
+.search__shiplist_unit_plan_trial_detail_day span img {
+  width: 24px;
+}
+.search__shiplist_unit_plan_trial_detail_day em {
+  font-size: 2rem;
+}
+.search__shiplist_unit_plan_trial_detail_day b {
+  font-size: 1.4rem;
+  margin: 0 0 -2px -1px;
+}
+
+
+
+
+.common__pageback_txt {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.common__pagetitle {
+  padding: 30px 30px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.common__pagetitle_txt {
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+.common__nofavorite_alert {
+  padding: 13px 10px;
+  border: #dedede 3px solid;
+  margin: 40px auto;
+  border-radius: 8px;
+  max-width: 700px;
+}
+
+
+.common__signout_favorite_alert {
+  padding: 13px 10px 20px;
+  border: #dedede 3px solid;
+  margin: 40px auto;
+  border-radius: 8px;
+  max-width: 700px;
+}
+.common__signout_favorite_alert_title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.55;
+  margin: 10px 0 0;
+}
+.common__signout_favorite_alert_signup_title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.55;
+}
+
+
+
+
+/*未ログイン状態で、こだわり検索のお気に入り船をクリックしたとき*/
+.index__second_overlay_signout_favorite_alert {
+  padding: 0 0 20px;
+}
+.index__second_overlay_signout_favorite_alert_title {
+  font-size: 20px;
+}
+.index__second_overlay_signout_favorite_alert_signup_title {
+  font-size: 20px;
+}
+
+
+
+
+
+
+/*閲覧履歴*/
+.history__block {
+  min-height: 30vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*全船リスト（地域選択）*/
+.allships_area__block {
+  min-height: 30vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*全船リスト（都道府県選択）*/
+.allships_pref__block {
+  min-height: 30vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*全船リスト（釣り船選択）*/
+.allships_detail__block {
+  min-height: 30vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

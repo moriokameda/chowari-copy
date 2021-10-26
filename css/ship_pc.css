@@ -1,0 +1,401 @@
+@charset "utf-8";
+
+/*釣り船詳細（PC）のプラン名の幅調整*/
+#main_ship .search__shiplist_unit_plan_list_item_info_title {
+  width: 350px;
+}
+
+/*釣り船情報（SP）*/
+.ship__header {
+  display: none;
+}
+
+/*釣り船情報（PC）*/
+.ship__heading {
+  display: block;
+  padding: 20px 0 20px;
+  box-shadow: 0 2px 7px rgba(0,0,0,.4);
+  position: relative;
+  z-index: 1;
+}
+.ship__heading_block {
+  max-width: 970px;
+  margin: 0 auto;
+}
+.ship__heading_title {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.ship__heading_title_name {
+  flex-grow: 1;
+  margin: 10px 0 13px;
+}
+.ship__heading_title_name_txt {
+  font-size: 2.7rem;
+  line-height: 1.3;
+  font-weight: bold;
+}
+.ship__heading_title_name_kana {
+  font-size: 1.2rem;
+  line-height: 1.25;
+  margin: 2px 0 0;
+  color: #999999;
+}
+.ship__heading_title_favorite {
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+.ship__heading_title_favorite_btn {
+  display: block;
+  padding: 5px;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.ship__heading_title_favorite_btn svg {
+  transform-origin: center center;
+  transform:scale(.95);
+  transition: all .3s ease;
+}
+.ship__heading_title_favorite_btn.on svg {
+  transform: scale(1);
+}
+.ship__heading_title_favorite_btn svg path {
+  fill: #d9d9d9;
+  transition: all .3s ease;
+}
+.ship__heading_title_favorite_btn.on svg path {
+  fill: #fa4641;
+}
+.ship__heading_txt {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship__heading_txt_address {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship__heading_txt_address_item {
+  font-size: 1.4rem;
+  margin: 3px 0;
+  position: relative;
+  line-height: 1.3;
+}
+.ship__heading_txt_address_item:not(:first-of-type) {
+  margin-left: 15px;
+}
+.ship__heading_txt_address_item:not(:first-of-type)::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent #1a1a1a;
+  position: absolute;
+  left: -10px;
+  top: .25em;
+}
+.ship__heading_txt_map {
+  margin: 0 0 0 10px;
+  flex-shrink: 0;
+}
+.ship__heading_txt_map a,
+.ship__heading_txt_map span {
+  padding: 5px 7px;
+  display: block;
+  font-size: 1.4rem;
+  border: #419ef0 1px solid;
+  border-radius: 3px;
+  color: #419ef0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/*釣り船ナビ*/
+.ship__nav {
+  padding: 0;
+  background: #114e83;
+}
+.ship__nav_block {
+  max-width: 970px;
+  margin: 0 auto;
+
+}
+.ship__nav_set {
+}
+.ship__nav_set_list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship__nav_set_list_item {
+  width: 100%;
+  position: relative;
+  margin: 0;
+}
+.ship__nav_set_list_item:not(:last-of-type)::after {
+  content: "";
+  width: 1px;
+  height: calc(100% - 24px);
+  background: rgba(255,255,255,.4);
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 12px 0;
+}
+.ship__nav_set_list_item:first-of-type {
+  width: 100%;
+}
+.ship__nav_set_list_item a {
+}
+.ship__nav_set_list_item span {
+}
+.ship__nav_set_list_item a,
+.ship__nav_set_list_item span {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: bold;
+  padding: 21px 0 20px;
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+.ship__nav_set_list_item a:hover,
+.ship__nav_set_list_item span:hover {
+  color: #fff100;
+}
+
+
+/*釣り船紹介文*/
+.ship__intro {
+  padding: 32px 0 35px;
+}
+.ship__intro_block {
+  max-width: 970px;
+  margin: 0 auto;
+}
+.ship__intro_txt {
+  height: auto;
+}
+.ship__intro_txt::after {
+  content: none;
+}
+.ship__intro_txt_btn {
+  display: none;
+}
+
+
+/*メッセージ*/
+.ship__intro_message {
+  margin-top: 25px;
+}
+.ship__intro_message_heading_icon img {
+  width: 63px;
+}
+
+
+
+/*おすすめコメント*/
+.ship__intro_recommend {
+  margin-top: 25px;
+}
+
+
+
+/*お試しモニター中！*/
+.ship__trial {
+  padding: 27px 15px 0;
+  background: #F0F0F0;
+}
+.ship__trial_block {
+  max-width: 970px;
+  margin: 0 auto;
+}
+.ship__trial_detail figure img {
+  width: 345px;
+}
+.ship__trial_detail_day {
+  top: 65%;
+  left: 8.2%;
+}
+.ship__trial_detail_day span img {
+  width: 24px;
+}
+.ship__trial_detail_day em {
+  font-size: 2rem;
+}
+.ship__trial_detail_day b {
+  font-size: 1.4rem;
+  margin: 0 0 -2px -1px;
+}
+
+
+
+
+
+/*釣り船予約プラン*/
+.ship__plan {
+  background: #f0f0f0;
+  padding: 30px 0 0;
+}
+.ship__plan_block {
+  border: none;
+  max-width: 970px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px 30px 30px;
+}
+
+.ship__plan_nodata {
+  padding: 0;
+}
+.ship__plan_nodata_image {
+  text-align: center;
+}
+.ship__plan_nodata_image img {
+  width: auto;
+  max-width: 100%;
+}
+
+
+
+/*釣り船情報*/
+.ship__detail {
+  background: #f0f0f0;
+  padding: 30px 0 0;
+}
+.ship__detail_block {
+  border: none;
+  max-width: 970px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px 15px 30px;
+}
+.ship__detail_list_item {
+  padding: 15px 0 0;
+  margin: 15px;
+  border-top: #cccccc 1px solid;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship__detail_list_item:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 15px;
+}
+.ship__detail_list_item_title {
+  color: #2a86d8;
+  font-size: 1.4rem;
+  margin: 0 0 0 5px;
+  width: 160px;
+  flex-shrink: 0;
+}
+.ship__detail_list_item_txt {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0 5px 0 0;
+}
+.ship__detail_list_item_txt a {
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+.ship__detail_list_item_txt a:hover {
+  color: #fb8a19;
+}
+
+
+/*釣り船地図*/
+.ship__map {
+  background: #f0f0f0;
+  padding: 30px 0 50px;
+}
+.ship__map_block {
+  border: none;
+  max-width: 970px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px 30px 30px;
+}
+.ship__map_view {
+  width: 100%;
+  height: 50vh;
+  background: #AADAFF;
+}
+
+
+/*よくあるご質問*/
+.ship__pagefaq {
+  margin: 60px 0 0;
+}
+
+
+/*写真（横スライドで表示）*/
+.ship__modal_photo {
+  width: 80vw;
+}
+.ship__modal_photo_thumblist_item {
+  width: calc(100% / 4);
+  padding: 1.5px;
+}
+.ship__modal_photo_thumblist_item img {
+  object-fit: cover;
+  height: auto;
+}
+.ship__modal_photo_overlay_inner {
+  padding-bottom: 0;
+}
+
+/*地図（横スライドで表示）*/
+.ship__modal_access {
+  width: 80vw;
+}
+.ship__modal_access_unit {
+  padding-left: 30px;
+  padding-right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

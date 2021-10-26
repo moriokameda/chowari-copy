@@ -1,0 +1,1073 @@
+@charset "utf-8";
+
+/*全体枠*/
+#main_reserve,
+#main_reserve_advance {
+  padding-bottom: 100px;
+}
+
+/*全体枠（前日割）*/
+#main_reserve_advance {
+}
+/*マイページの予約確認の全体枠（前日割）*/
+#main_account_reserve_advance {
+}
+/*前日割カラー変更*/
+#main_reserve_advance .reserve_common__key_item {
+  background: #dcfadd;
+  color: #00a308;
+}
+#main_reserve_advance .reserve_common__key_item::after {
+  border-left-color: #dcfadd;
+}
+#main_reserve_advance .reserve_common__key_item.current {
+  background: #00a308;
+  color: #fff;
+}
+#main_reserve_advance .reserve_common__key_item.current::after {
+  border-left-color: #00a308;
+}
+#main_reserve_advance .reserve_common__finish_title span {
+  background: #dcfadd;
+  color: #00a308;
+}
+#main_reserve_advance .reserve_common__finish_txt {
+  font-size: 1.5rem;
+}
+#main_reserve_advance .reserve_common__block_unit_title,
+#main_account_reserve_advance .reserve_common__block_unit_title {
+  color: #00a308;
+}
+#main_reserve_advance .reserve_common__block_unit_content_form_normal input[type="text"],
+#main_account_reserve_advance .reserve_common__block_unit_content_form_normal input[type="text"],
+#main_reserve_advance .reserve_common__block_unit_content_form_normal input[type="tel"],
+#main_account_reserve_advance .reserve_common__block_unit_content_form_normal input[type="tel"],
+#main_reserve_advance .reserve_common__block_unit_content_form_normal input[type="number"],
+#main_account_reserve_advance .reserve_common__block_unit_content_form_normal input[type="number"],
+#main_reserve_advance .reserve_common__block_unit_content_form_normal input[type="password"],
+#main_account_reserve_advance .reserve_common__block_unit_content_form_normal input[type="password"],
+#main_reserve_advance .reserve_common__block_unit_content_form_normal textarea,
+#main_account_reserve_advance .reserve_common__block_unit_content_form_normal textarea,
+#main_reserve_advance .reserve_common__block_unit_content_form_normal select,
+#main_account_reserve_advance .reserve_common__block_unit_content_form_normal select {
+  border-color: #00a308;
+}
+#main_reserve_advance .reserve_common__block_unit_content_form_select::after,
+#main_account_reserve_advance .reserve_common__block_unit_content_form_select::after {
+  color: #00a308;
+}
+#main_reserve_advance .reserve_common__block_unit_content_plan_note_title,
+#main_account_reserve_advance .reserve_common__block_unit_content_plan_note_title {
+  color: #00a308;
+}
+
+
+/*rainbow*/
+.reserve_common__topbar_rainbow {
+  background: linear-gradient(45deg, #FA4641 0%, #FC9A0F 25%, #36C980 50%, #419EF0 75%, #B958EE 100%);
+  height: 6px;
+}
+/*yellow*/
+.reserve_common__topbar_yellow {
+  background: #fff100;
+  height: 6px;
+}
+
+/*前日割固定ヘッダー*/
+.reserve_common__topbar_advance {
+  background: #fff100;
+  padding: 8px 15px 7px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,.4);
+}
+.reserve_common__topbar_advance_block {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.reserve_common__topbar_advance_txt {
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+.reserve_common__topbar_advance_txt strong {
+  color: #fa4641;
+  font-weight: bold;
+}
+.reserve_common__topbar_advance_txt em {
+  color: #00a308;
+  font-weight: bold;
+}
+.reserve_common__topbar_advance_txt b {
+  font-weight: bold;
+}
+
+
+/*KEY*/
+.reserve_common__key {
+  padding: 35px 15px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/*手順の流れ*/
+.reserve_common__key_flow {
+  margin: 0 0 25px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.reserve_common__key_item {
+  background: #ffdcdb;
+  color: #fa4641;
+  font-size: 1.2rem;
+  height: 32px;
+  position: relative;
+  width: calc(100% / 3);
+  padding-left: 14px;
+  text-align: center;
+  border-radius: 2px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.reserve_common__key_item.current {
+  background: #fa4641;
+  color: #fff;
+}
+.reserve_common__key_item:last-of-type {
+  width: calc((100% / 3) - 7px);
+  padding-left: 5px;
+}
+.reserve_common__key_item:first-of-type {
+  width: calc((100% / 3) + 7px);
+  padding-left: 10px;
+}
+.reserve_common__key_item::before,
+.reserve_common__key_item::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 16px 0 16px 14px;
+  border-color: transparent transparent transparent #ffdcdb;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(96%,-50%);
+}
+.reserve_common__key_item::before {
+  border-left-color: #fff;
+  right: -1px;
+  border-width: 20px 0 20px 17px;
+}
+.reserve_common__key_item.current::after {
+  border-left-color: #fa4641;
+}
+.reserve_common__key_item:first-of-type::before,
+.reserve_common__key_item:first-of-type::after {
+  content: none;
+}
+
+/*ページタイトル*/
+.reserve_common__key_pagetitle {
+  font-size: 2.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+.reserve_common__key_pagetitle span {
+  padding: 6px 4px 2px;
+  color: #fff;
+  margin: 0 3px 0 0;
+  display: inline-block;
+  border-radius: 2px;
+  background: #00a308;
+}
+/*リード文*/
+.reserve_common__key_txt {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+  margin: 15px 0 0;
+}
+/*エラー*/
+.reserve_common__key_error {
+  font-size: 1.7rem;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  margin: 15px 10px 0;
+  color: #fa4641;
+  border: #fa4641 5px solid;
+  padding: 8px 5px;
+  background: #ffff00;
+}
+.reserve_common__key_error:empty {
+  display: none;
+}
+
+/*灰色大枠*/
+.reserve_common__block {
+  background: #e6e6e6;
+  padding: 18px 15px 20px;
+}
+/*プラン内容*/
+.reserve_common__block_unit {
+  background: #fff;
+  padding: 20px 15px 20px;
+  margin: 0 auto 20px;
+  border-radius: 4px;
+  max-width: 700px;
+}
+.reserve_common__block_unit:last-of-type {
+  margin-bottom: 0;
+}
+.reserve_common__block_unit_title {
+  color: #fa4641;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.reserve_common__block_unit_content {
+  margin: 14px 0 0;
+}
+.reserve_common__block_unit_content > *:last-child {
+  margin-bottom: 0;
+}
+/*content内の１ブロック*/
+.reserve_common__block_unit_content_group {
+  margin: 25px 0 0;
+}
+/*通常の文章（１行～複数行）*/
+.reserve_common__block_unit_content_txt_normal {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+/*電話番号*/
+.reserve_common__block_unit_content_txt_tel {
+  font-size: 2.2rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, "sans-serif";
+}
+/*注意文*/
+.reserve_common__block_unit_content_txt_aten {
+  margin: 15px 0 15px 13px;
+}
+.reserve_common__block_unit_content_plan_table .reserve_common__block_unit_content_txt_aten {
+  margin: 0; /*プラン表の中のとき*/
+}
+.reserve_common__block_unit_content_plan_table .reserve_common__block_unit_content_txt_aten li {
+  margin-bottom: 2px; /*プラン表の中のとき*/
+}
+.reserve_common__block_unit_content_txt_aten li {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-indent: -1em;
+  margin: 0 0 10px 1em;
+  color: #4c4c4c;
+}
+.reserve_common__block_unit_content_txt_aten li em {
+  font-weight: bold;
+}
+.reserve_common__block_unit_content_txt_aten li:last-of-type {
+  margin-bottom: 0;
+}
+.reserve_common__block_unit_content_txt_aten li::before {
+  content: "※";
+  color: #fa4641;
+}
+/*リスト１列*/
+.reserve_common__block_unit_content_txt_list_single {
+}
+.reserve_common__block_unit_content_txt_list_single li {
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin: 0 0 5px;
+}
+.reserve_common__block_unit_content_txt_list_single li:last-of-type {
+  margin-bottom: 0;
+}
+/*リスト２列*/
+.reserve_common__block_unit_content_txt_list_dual {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.reserve_common__block_unit_content_txt_list_dual li {
+  width: calc(50% - 6px);
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin: 0 0 5px;
+}
+.reserve_common__block_unit_content_txt_list_dual li:nth-last-of-type(-n+2) {
+  margin-bottom: 0;
+}
+/*content内の黒色タイトル*/
+.reserve_common__block_unit_content_title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0 0 11px;
+}
+/*フォームの通常（text,select,textarea）*/
+.reserve_common__block_unit_content_form_normal {
+}
+.reserve_common__block_unit_content_form_normal input[type="text"],
+.reserve_common__block_unit_content_form_normal input[type="tel"],
+.reserve_common__block_unit_content_form_normal input[type="number"],
+.reserve_common__block_unit_content_form_normal input[type="password"],
+.reserve_common__block_unit_content_form_normal textarea,
+.reserve_common__block_unit_content_form_normal select {
+  border: #fa4641 1px solid;
+  border-radius: 4px;
+  height: 35px;
+  width: calc(100% - 24px);
+  padding: 6px 12px 4px;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  box-sizing: content-box;
+  box-shadow:2px 2px 3px rgba(0,0,0,0.1) inset;
+}
+.reserve_common__block_unit_content_form_normal input[type="text"]:focus,
+.reserve_common__block_unit_content_form_normal input[type="tel"]:focus,
+.reserve_common__block_unit_content_form_normal input[type="number"]:focus,
+.reserve_common__block_unit_content_form_normal input[type="password"]:focus,
+.reserve_common__block_unit_content_form_normal textarea:focus {
+  background-color:#feffe8;
+}
+.reserve_common__block_unit_content_form_normal textarea {
+  min-height: 250px;
+  max-height: 50vh;
+  resize: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.reserve_common__block_unit_content_form_normal select {
+  padding-right: 30px;
+}
+.reserve_common__block_unit_content_form_select {
+  position: relative;
+  display: inline-block;
+}
+.reserve_common__block_unit_content_form_select::after {
+  content: "▼";
+  color: #fa4641;
+  font-size: 1.8rem;
+  display: block;
+  position: absolute;
+  right: 8px;
+  top: calc(50% + 1px);
+  transform: translate(0,-50%);
+}
+/*フォームのリスト１列*/
+.reserve_common__block_unit_content_form_list_single {
+}
+.reserve_common__block_unit_content_form_list_single li {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin: 0 0 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.reserve_common__block_unit_content_form_list_single li:last-of-type {
+  margin-bottom: 0;
+}
+.reserve_common__block_unit_content_form_list_single li label {
+  background: #f0f0f0;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  height: 100%;
+}
+/*フォームのリスト２列*/
+.reserve_common__block_unit_content_form_list_dual {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.reserve_common__block_unit_content_form_list_dual li {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  width: calc(50% - 6px);
+  margin: 0 0 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.reserve_common__block_unit_content_form_list_dual li:nth-last-of-type(-n+2) {
+  margin-bottom: 0;
+}
+.reserve_common__block_unit_content_form_list_dual li label {
+  background: #f0f0f0;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+/*フォームの乗船人数*/
+.reserve_common__block_unit_content_form_people {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.reserve_common__block_unit_content_form_select_sidesup {
+  color: #00a308;
+  font-size: 1.6rem;
+  background: #dcfadd;
+  padding: 10px 11px 9px;
+  margin: 0 0 0 15px;
+}
+.reserve_common__block_unit_content_form_select_sidesup em {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0 1px;
+}
+
+/*登録情報の修正リンク*/
+.reserve_common__block_unit_content_link_correct_sidesup {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.reserve_common__block_unit_content_link_correct_sidesup::before {
+  content: "≫";
+  margin-right: 2px;
+}
+.reserve_common__block_unit_content_link_correct {
+  display: block;
+  text-align: right;
+  margin: 7px 0 0;
+}
+.reserve_common__block_unit_content_link_correct a {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.reserve_common__block_unit_content_link_correct a::before {
+  content: "≫";
+  margin-right: 2px;
+}
+
+/*プラン表*/
+.reserve_common__block_unit_content_plan_table {
+  width: 100%;
+}
+.reserve_common__block_unit_content_plan_table > tbody > tr {
+}
+.reserve_common__block_unit_content_plan_table > tbody > tr > th,
+.reserve_common__block_unit_content_plan_table > tbody > tr > td {
+  border: #cccccc 1px solid;
+  border-left: none;
+  border-right: none;
+  padding-top: 9px;
+  padding-bottom: 8px;
+  box-sizing: content-box;
+}
+.reserve_common__block_unit_content_plan_table > tbody > tr > th {
+  font-size: 1.6rem;
+  width: 6.5em;
+  padding-left: 2px;
+  padding-right: 5px;
+}
+.reserve_common__block_unit_content_plan_table > tbody > tr > td {
+  font-size: 1.6rem;
+  padding-left: 0;
+  padding-right: 2px;
+}
+.reserve_common__block_unit_content_plan_table > tbody > tr > th span,
+.reserve_common__block_unit_content_plan_table > tbody > tr > td span {
+  font-size: inherit;
+  display: block;
+  line-height: 1.4;
+}
+
+/*プラン表：釣り船名*/
+.reserve_common__block_unit_content_plan_table_ship {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.reserve_common__block_unit_content_plan_table_ship figure {
+  flex-shrink: 0;
+  width: 25vw;
+  max-width: 200px;
+  max-height: 150px;
+  margin: 2px 12px 7px 0;
+  display: none;
+}
+.reserve_common__block_unit_content_plan_table_ship span {
+}
+
+/*プラン表：プラン名*/
+.reserve_common__block_unit_content_plan_table_name {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.reserve_common__block_unit_content_plan_table_name figure {
+  flex-shrink: 0;
+  width: 25vw;
+  max-width: 200px;
+  max-height: 150px;
+  margin: 2px 12px 7px 0;
+  display: none;
+}
+.reserve_common__block_unit_content_plan_table_name span {
+}
+.reserve_common__block_unit_content_plan_table_name b {
+  padding: 1px 4px 0;
+  color: #fff;
+  margin: 0 3px 0 0;
+  display: inline-block;
+  border-radius: 2px;
+  font-size: .9em;
+  vertical-align: middle;
+}
+.reserve_common__block_unit_content_plan_table_name.share b {
+  background: #27c277;
+}
+.reserve_common__block_unit_content_plan_table_name.charter b {
+  background: #fb8a19;
+}
+
+/*プラン表：価格*/
+.reserve_common__block_unit_content_plan_table_price {
+  color: #fa4641;
+  font-weight: bold; 
+}
+.reserve_common__block_unit_content_plan_table_price em {
+  font-size: 1.4em;
+  font-weight: inherit;
+  font-family: Arial, Helvetica, "sans-serif";
+}
+.reserve_common__block_unit_content_plan_table_price b {
+  font-size: .9em;
+  font-weight: inherit; 
+  margin: 0 0 0 1px;
+}
+.reserve_common__block_unit_content_plan_table_price i {
+  font-size: .85em;
+  font-weight: inherit; 
+}
+.reserve_common__block_unit_content_plan_table_price_sub {
+  font-size: 1.4rem;
+  margin: 5px 0 0;
+  display: none;
+}
+.reserve_common__block_unit_content_plan_table_price_sub > tbody > tr {
+}
+.reserve_common__block_unit_content_plan_table_price_sub > tbody > tr > th,
+.reserve_common__block_unit_content_plan_table_price_sub > tbody > tr > td {
+  padding: 3px 2px;
+}
+.reserve_common__block_unit_content_plan_table_price_sub > tbody > tr > th {
+}
+.reserve_common__block_unit_content_plan_table_price_sub > tbody > tr > td {
+}
+
+/*プラン表：ポイント*/
+.reserve_common__block_unit_content_plan_table_point {
+  background: #fff100;
+  padding: 3px 8px;
+  border-radius: 50px;
+  display: inline-block;
+  margin: 0 0 6px;
+}
+.reserve_common__block_unit_content_plan_table_point.share {
+}
+.reserve_common__block_unit_content_plan_table_point.charter {
+  color: #fa4641;
+}
+.reserve_common__block_unit_content_plan_table_point em {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, "sans-serif";
+}
+.reserve_common__block_unit_content_plan_table_point b {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/*プランをもっと見るボタン*/
+.reserve_common__block_unit_content_plan_btn_more {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 20px 26px 20px 0;
+  cursor: pointer;
+  margin: 5px 15px 0;
+}
+.reserve_common__block_unit_content_plan_btn_more span {
+  font-size: 1.5rem;
+  position: relative;
+  display: block;
+}
+.reserve_common__block_unit_content_plan_btn_more span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -26px;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -80%) rotate(-45deg);
+  border: 2px solid #1a1a1a;
+  border-top: none;
+  border-right: none;
+}
+
+/*プラン表：紹介文*/
+.reserve_common__block_unit_content_plan_intro {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  padding: 5px 0 17px;
+}
+.reserve_common__block_unit_content_plan_intro figure {
+  flex-shrink: 0;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 0 10px;
+  text-align: center;
+}
+.reserve_common__block_unit_content_plan_intro figure img {
+  max-width: 360px;
+  filter: brightness(1.1);
+}
+.reserve_common__block_unit_content_plan_intro_txt {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+/*プラン表：備考*/
+.reserve_common__block_unit_content_plan_note {
+  margin: 20px 0 0;
+}
+.reserve_common__block_unit_content_plan_note_title {
+  color: #fa4641;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.reserve_common__block_unit_content_plan_note_txt {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin: 10px 0 0;
+}
+
+/*ボタン枠（下部）*/
+.reserve_common__action {
+  max-width: 700px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+}
+/*ボタン枠（固定）*/
+.reserve_common__action_fix {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: #fff;
+  padding: 10px 20px;
+  padding-bottom: calc( env(safe-area-inset-bottom) - 15px);
+  box-shadow: 0 0 8px rgba(0,0,0,.4);
+}
+.reserve_common__action_fix_block {
+  max-width: 660px;
+  margin: 0 auto 10px;
+}
+.reserve_common__action_fix_block .reserve_common__action_btn_proceed,
+.reserve_common__action_fix_block .reserve_common__action_btn_aten {
+  margin: 0;
+}
+/*ボタン枠（固定+幅制限あり）*/
+.reserve_common__action_fix_limited {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.reserve_common__action_fix_limited_block {
+  background: #fff;
+  padding: 10px 20px;
+  /*padding-bottom: calc( env(safe-area-inset-bottom) - 15px);*/
+  box-shadow: 0 0 8px rgba(0,0,0,.4);
+  max-width: 700px;
+  margin: 0 auto;
+}
+.reserve_common__action_fix_limited_block .reserve_common__action_btn_proceed,
+.reserve_common__action_fix_limited_block .reserve_common__action_btn_aten {
+  margin: 0;
+}
+/*ボタン（共通）*/
+.reserve_common__action_btn_back {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 25px 0;
+}
+.reserve_common__action_btn_back a,
+.reserve_common__action_btn_back button {
+  background: #fff;
+  width: 44vw;
+  max-width: 300px;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 13px 15px;
+  border-radius: 6px;
+  border: #c2c2c2 1px solid;
+  display: block;
+  color: inherit;
+}
+.reserve_common__action_btn_proceed {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 25px 0;
+}
+.reserve_common__action_btn_proceed a,
+.reserve_common__action_btn_proceed button {
+  width: 100%;
+  background: #fa4641;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 6px;
+  display: block;
+}
+.reserve_common__action_btn_normal {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 25px 0;
+}
+.reserve_common__action_btn_normal a,
+.reserve_common__action_btn_normal button {
+  width: 100%;
+  background: #419ef0;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 6px;
+  display: block;
+}
+.reserve_common__action_btn_aten {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 25px 0;
+}
+.reserve_common__action_btn_aten a,
+.reserve_common__action_btn_aten button {
+  width: 100%;
+  background: #1a1a1a;
+  color: #fff100;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 6px;
+  display: block;
+}
+
+/*前日割予約の確定注意*/
+.reserve_common__regard_advance {
+  max-width: 700px;
+  margin: 30px auto 30px;
+  padding: 0 30px;
+}
+.reserve_common__regard_advance_block {
+  background: #dcfadd;
+  padding: 15px 15px 14px;
+}
+.reserve_common__regard_advance_title {
+  color: #00a308;
+  font-size: 1.9rem;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+}
+.reserve_common__regard_advance_title em {
+  font-weight: inherit;
+  color: #fa4641;
+}
+.reserve_common__regard_advance_txt {
+  color: #00a308;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  margin: 4px 0 0;
+  text-align: center;
+}
+.reserve_common__regard_advance_aten {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  border-top: rgba(0,0,0,.3) 1px dashed;
+  padding: 10px 0 0;
+  margin: 11px 0 0;
+  color: #4c4c4c;
+  text-align: center;
+}
+
+/*プラン条件合致チェック*/
+.reserve_common__check {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  padding: 15vh 15px 0;
+}
+.reserve_common__check_title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.9;
+}
+.reserve_common__check_title strong {
+  color: #fa4641;
+  font-weight: inherit;
+}
+.reserve_common__check_sup {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 16px 0 0;
+}
+.reserve_common__check_sup_txt {
+  background: #f0f0f0;
+  color: #4c4c4c;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  padding: 6px 8px 4px;
+}
+
+
+/*申込み完了*/
+.reserve_common__finish {
+  padding: 0 15px 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.reserve_common__finish_title {
+  text-align: center;
+}
+.reserve_common__finish_title span {
+  font-size: 1.7rem;
+  font-weight: bold;
+  background: #ffdcdb;
+  color: #fa4641;
+  padding: 11px 15px 9px;
+  display: inline-block;
+  min-width: 90%;
+  line-height: 1.45;
+}
+.reserve_common__finish_txt {
+  font-size: 1.6rem;
+  line-height: 1.65;
+  font-weight: bold;
+  border: rgba(0,0,0,.5) 1px dashed;
+  border-left: none;
+  border-right: none;
+  padding: 14px 0 13px;
+  margin: 22px 0 0;
+  text-align: center;
+}
+.reserve_common__finish_txt strong {
+  color: #fa4641;
+  font-weight: bold;
+}
+.reserve_common__finish_atenlist {
+  margin: 18px 0 15px 13px;
+}
+.reserve_common__finish_atenlist li {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-indent: -1em;
+  margin: 0 0 10px 1em;
+  color: #4c4c4c;
+}
+.reserve_common__finish_atenlist li em {
+  font-weight: bold;
+}
+.reserve_common__finish_atenlist li:last-of-type {
+  margin-bottom: 0;
+}
+.reserve_common__finish_atenlist li::before {
+  content: "※";
+  color: #fa4641;
+}
+
+.reserve_common__finish_sup {
+  margin: 17px auto 0;
+  padding: 0 15px;
+  max-width: 700px;
+}
+.reserve_common__finish_sup_txt {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  text-indent: -1em;
+  margin: 0 0 0 1em;
+}
+.reserve_common__finish_sup_txt::before {
+  content: "※";
+  color: #fa4641;
+  font-weight: bold;
+}
+.reserve_common__finish_sup_txt strong {
+  color: #fa4641;
+  font-weight: bold;
+}
+.reserve_common__finish_sup_txt em {
+  font-weight: bold;
+}
+
+.reserve_common__finish_tel {
+  background: #e3f2ff;
+  padding: 26px 20px 25px;
+  margin: 20px auto 20px;
+  max-width: 700px;
+}
+.reserve_common__finish_tel_txt {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #419ef0;
+  text-align: center;
+  margin: 0 0 9px;
+}
+.reserve_common__finish_tel_title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #419ef0;
+  text-align: center;
+}
+.reserve_common__finish_tel_btn {
+  margin-top: 14px;
+}
+.reserve_common__finish_tel_btn a {
+  background: #fff;
+  padding: 10px 10px 13px;
+  border: #419ef0 1.5px solid;
+  border-radius: 8px;
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.reserve_common__finish_tel_btn_icon {
+  flex-shrink: 0;
+  margin: 5px 6px 0 0;
+  border-radius: 100px;
+  padding: 6px;
+  background: #fff;
+  border: rgba(250,70,65,.8) 1px solid;
+  border: rgba(65,158,240,.8) 1px solid;
+}
+.reserve_common__finish_tel_btn_icon path {
+  fill: #419ef0;
+}
+.reserve_common__finish_tel_btn_info {
+  text-align: center;
+  margin: 0 6px 0 0;
+}
+.reserve_common__finish_tel_btn_num {
+  font-size: 32px;/*px=ok*/
+  font-weight: bold;
+  color: #419ef0;
+  font-family: Arial, Helvetica, "sans-serif";
+}
+.reserve_common__finish_tel_btn_txt {
+  font-size: 14px;/*px=ok*/
+  color: #419ef0;
+  margin: 2px 0 0;
+}
+
+@media screen and (min-width:769px) {
+  .reserve_common__finish_tel {
+    margin-top: 50px;
+  }
+  .reserve_common__finish_tel_txt {
+    font-size: 1.7rem;
+  }
+  .reserve_common__finish_tel_title {
+    font-size: 2.8rem;
+  }
+  .reserve_common__finish_tel_btn {
+    margin-top: 15px;
+  }
+  .reserve_common__finish_tel_btn a {
+    pointer-events: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

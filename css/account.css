@@ -1,0 +1,322 @@
+@charset "utf-8";
+
+/*マイページタイトル*/
+.common_account_mypage__pagetitle {
+  background: #1a4984;
+  padding: 16px 15px 15px;
+}
+.common_account_mypage__pagetitle_txt {
+  font-size: 1.7rem;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+/*マイページの予約確認の全体枠（前日割）*/
+/*reserve.cssにも同じ記述あり（前日割用の色変更のため）*/
+#main_account_reserve_advance {
+}
+
+/*予約の人数変更*/
+.account_reserve_common__whole {
+  background-position: center top;
+  background-size: 100vw auto;
+  background-repeat: no-repeat;
+  background-color: #000;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+}
+.account_reserve_common__whole::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.account_reserve_common__whole::after {
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
+}
+.account_reserve_common__whole_block {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.account_reserve_common__whole_heading {
+  padding: 6px 10px 6px;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 49px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  align-content: flex-start;
+  position: relative;/*iPhone6対応*/
+  position: sticky;
+  top: 0;
+  background-position: center top;
+  background-size: 100vw auto;
+  background-repeat: no-repeat;
+  background-color: #000;
+  z-index: 20;
+}
+.account_reserve_common__whole_heading::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.account_reserve_common__whole_heading_close {
+  position: absolute;
+  top: 9px;
+  right: 4px;
+  display: block;
+}
+
+/*プランのメイン枠*/
+.account_reserve_common__whole_unit {
+  background: #fff;
+  padding: 0 0 100px;
+  -webkit-overflow-scrolling: touch;
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.account_reserve_common__whole_unit::-webkit-scrollbar {
+  display: none;
+}
+
+
+/*予約の変更完了*/
+
+/*rainbow*/
+.account_reserve_common__topbar_rainbow {
+  background: linear-gradient(45deg, #FA4641 0%, #FC9A0F 25%, #36C980 50%, #419EF0 75%, #B958EE 100%);
+  height: 6px;
+}
+/*yellow*/
+.account_reserve_common__topbar_yellow {
+  background: #fff100;
+  height: 6px;
+}
+
+.account_reserve_common__finish {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  padding: 15vh 15px 0;
+}
+.account_reserve_common__finish_title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.7;
+}
+.account_reserve_common__finish_title span {
+  padding: 6px 4px 2px;
+  color: #fff;
+  margin: 0 3px 0 0;
+  display: inline-block;
+  border-radius: 2px;
+  background: #00a308;
+}
+
+.account_reserve_common__finish_aten {
+  margin: 20px 0 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.account_reserve_common__finish_aten li {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-indent: -1em;
+  margin: 0 0 10px 1em;
+  color: #4c4c4c;
+}
+.account_reserve_common__finish_aten li em {
+  font-weight: bold;
+}
+.account_reserve_common__finish_aten li:last-of-type {
+  margin-bottom: 0;
+}
+.account_reserve_common__finish_aten li::before {
+  content: "※";
+  color: #fa4641;
+}
+
+/*予約の変更不可*/
+.account_reserve_common__finish_nochange {
+  max-width: 700px;
+  margin: 0 auto 25px;
+  padding: 12vh 15px 0;
+}
+.account_reserve_common__finish_nochange_title {
+  text-align: center;
+}
+.account_reserve_common__finish_nochange_title span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: #ffdcdb;
+  color: #fa4641;
+  padding: 15px 18px 14px;
+  display: inline-block;
+}
+.account_reserve_common__finish_nochange_txt {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.8;
+  margin: 24px 0 0;
+}
+.account_reserve_common__finish_nochange_txt strong {
+  color: #fa4641;
+  font-weight: inherit;
+}
+
+/*予約の変更不可 釣り船への電話*/
+.account_reserve_common__finish_nochange_tel {
+  background: #f0f0f0;
+  padding: 22px 20px 24px;
+  margin: 0 auto 35px;
+  max-width: 700px;
+}
+.account_reserve_common__finish_nochange_tel_title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.4;
+}
+.account_reserve_common__finish_nochange_tel_btn {
+  margin-top: 11px;
+}
+.account_reserve_common__finish_nochange_tel_btn a {
+  background: #fff;
+  padding: 10px 10px 13px;
+  border: #1a1a1a 1.5px solid;
+  border-radius: 8px;
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.account_reserve_common__finish_nochange_tel_btn_icon {
+  flex-shrink: 0;
+  margin: 5px 6px 0 0;
+  border-radius: 100px;
+  padding: 6px;
+  background: #fff;
+  border: rgba(26,26,26,.8) 1px solid;
+}
+.account_reserve_common__finish_nochange_tel_btn_icon path {
+  fill: #1a1a1a;
+}
+.account_reserve_common__finish_nochange_tel_btn_info {
+  text-align: center;
+  margin: 3px 2px 0 0;
+}
+.account_reserve_common__finish_nochange_tel_btn_num {
+  font-size: 32px;/*px=ok*/
+  font-weight: bold;
+  color: #1a1a1a;
+  font-family: Arial, Helvetica, "sans-serif";
+}
+@media screen and (min-width:769px) {
+  .account_reserve_common__finish_nochange_title span {
+    font-size: 2rem;
+  }
+  .account_reserve_common__finish_nochange_tel_btn a {
+    pointer-events: none;
+  }
+}
+
+/*ボタン枠*/
+.account_reserve_common__action {
+  max-width: 700px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+}
+/*ボタン*/
+.account_reserve_common__action_btn_back {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 25px 0;
+}
+.account_reserve_common__action_btn_back a,
+.account_reserve_common__action_btn_back button {
+  background: #fff;
+  width: 44vw;
+  max-width: 300px;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 13px 15px;
+  border-radius: 6px;
+  border: #c2c2c2 1px solid;
+  display: block;
+  color: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

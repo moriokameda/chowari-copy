@@ -1,0 +1,293 @@
+@charset "utf-8";
+
+/*下部固定ナビ（index）*/
+.common__footer_nav_index {
+  padding: 0 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 30;
+}
+.common__footer_nav_index_list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  border: #1a1a1a 5px solid;
+  border-bottom: none;
+  border-radius: 13px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  padding-bottom: calc( env(safe-area-inset-bottom) - 15px);
+  background: #fff;
+}
+.common__footer_nav_index_list_item {
+  width: calc(100% / 6);
+  position: relative;
+}
+.common__footer_nav_index_list_item a {
+  display: block;
+  padding: 2px 0 5px;
+  text-align: center;
+}
+.common__footer_nav_index_list_item picture {
+}
+.common__footer_nav_index_list_item picture img,
+.common__footer_nav_index_list_item picture source {
+  width: 56px;
+}
+/*タブレット表示の特別調整*/
+@media screen and (min-width:769px) {
+  .common__footer_nav_index_list_item {
+    width: 160px;
+  }
+  .common__footer_nav_index_list_item:nth-of-type(n)::after {
+    content: "";
+    width: 1px;
+    height: calc(100% - 27px);
+    background: #cccccc;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 14px 0 13px;
+  }
+  .common__footer_nav_index_list_item:last-of-type::after {
+    content: none;
+  }
+  .common__footer_nav_index_list_item a {
+    padding: 9px 0 8px;
+  }
+  .common__footer_nav_index_list_item a:hover {
+    filter: brightness(1.2);
+  }
+  .common__footer_nav_index_list_item picture img,
+  .common__footer_nav_index_list_item picture source {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+
+
+
+/*下部固定ナビ（最新釣果）*/
+.common__footer_nav_catch {
+  padding: 0 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 30;
+}
+.common__footer_nav_catch_list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  align-content: flex-start;
+  border: #1a1a1a 5px solid;
+  border-bottom: none;
+  border-radius: 13px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  /*box-shadow: 0 0 0 2px #fff; */
+  overflow: hidden;
+  padding: 10px 0 0;
+  padding-bottom: calc( env(safe-area-inset-bottom) - 10px);
+  background: #fff;
+}
+.common__footer_nav_catch_list_item {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 3vw 10px;
+}
+
+
+
+
+
+/*下部固定ナビ（マイエリア釣果）*/
+.common__footer_nav_catcharea {
+  padding: 0 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 30;
+}
+.common__footer_nav_catcharea_list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  align-content: flex-start;
+  border: #1a1a1a 5px solid;
+  border-bottom: none;
+  border-radius: 13px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  padding: 10px 0 0;
+  padding-bottom: calc( env(safe-area-inset-bottom) - 10px);
+  background: #fff;
+}
+.common__footer_nav_catcharea_list_item {
+  margin: 0 3vw 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  max-width: 50%;
+  overflow: hidden;
+}
+.common__footer_nav_catcharea_list_item_unit {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  overflow: hidden;
+  padding: 4px 0 4px;
+}
+.common__footer_nav_catcharea_list_item_txt {
+  margin: 0 5px 0 0;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.common__footer_nav_catcharea_list_item_txt span {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.2;
+}
+.common__footer_nav_catcharea_list_item_btn {
+  flex-shrink: 0;
+  padding: 4px;
+}
+.common__footer_nav_catcharea_list_item_btn svg {
+  transform: scale(1.6);
+}
+.common__footer_nav_catcharea_list_item_btn svg path {
+}
+
+
+
+
+
+
+
+
+/*Footer用チェックボックス（角型）*/
+.common__footer_nav_label_check,
+.common__footer_nav_label_radio {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  padding: 8px 0 7px;
+  min-height: 42px;
+}
+.common__footer_nav_label_check span,
+.common__footer_nav_label_radio span {
+  border: 3px solid #000;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background-color: #fff;
+  display: inline-block;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+.common__footer_nav_label_check span[aria-checked=true],
+.common__footer_nav_label_radio span[aria-checked=true] {
+}
+.common__footer_nav_label_check span input,
+.common__footer_nav_label_radio span input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.common__footer_nav_label_check span[aria-checked=true]::before,
+.common__footer_nav_label_radio span[aria-checked=true]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(10% + 2px);
+  left: 85%;
+  width: 150%;
+  height: 80%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border: 8px solid #fff;
+  border-top: none;
+  border-right: none;
+}
+.common__footer_nav_label_check span[aria-checked=true]::after,
+.common__footer_nav_label_radio span[aria-checked=true]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  width: 150%;
+  height: 80%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border: 4px solid #fa4641;
+  border-top: none;
+  border-right: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

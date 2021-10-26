@@ -1,0 +1,1982 @@
+@charset "utf-8";
+
+/*釣り船情報（SP）*/
+.ship__header {
+  padding: 20px 15px 15px;
+}
+.ship__header_block {
+}
+.ship__header_title {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 0 0 2px;
+}
+.ship__header_title_name {
+  flex-grow: 1;
+  margin: 10px 0 9px;
+}
+.ship__header_title_name_txt {
+  font-size: 2.4rem;
+  line-height: 1.3;
+  font-weight: bold;
+}
+.ship__header_title_name_kana {
+  font-size: 1.2rem;
+  line-height: 1.25;
+  margin: 2px 0 0;
+  color: #999999;
+}
+.ship__header_title_favorite {
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+.ship__header_title_favorite_btn {
+  display: block;
+  padding: 5px;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.ship__header_title_favorite_btn svg {
+  transform-origin: center center;
+  transform:scale(1);
+  transition: all .3s ease;
+}
+.ship__header_title_favorite_btn.on svg {
+  transform: scale(1.1);
+}
+.ship__header_title_favorite_btn svg path {
+  fill: #d9d9d9;
+  transition: all .3s ease;
+}
+.ship__header_title_favorite_btn.on svg path {
+  fill: #fa4641;
+}
+.ship__header_txt {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship__header_txt_address {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship__header_txt_address_item {
+  font-size: 1.3rem;
+  margin: 3px 0;
+  position: relative;
+  line-height: 1.3;
+}
+.ship__header_txt_address_item:not(:first-of-type) {
+  margin-left: 15px;
+}
+.ship__header_txt_address_item:not(:first-of-type)::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent #1a1a1a;
+  position: absolute;
+  left: -10px;
+  top: .25em;
+}
+.ship__header_txt_map {
+  margin: 0 0 0 10px;
+  flex-shrink: 0;
+}
+.ship__header_txt_map span,
+.ship__header_txt_map a {
+  padding: 5px;
+  display: block;
+  font-size: 1.3rem;
+  border: #419ef0 1px solid;
+  border-radius: 3px;
+  color: #419ef0;
+  font-weight: bold;
+}
+
+/*釣り船写真*/
+.ship__key {
+}
+.ship__key img {
+  filter: brightness(1.1);
+}
+
+/*釣り船情報（PC）*/
+.ship__heading {
+  display: none;
+}
+
+
+/*★★★★★★★★★★★★★★この辺から、最低限のコードしか書いていない。★★★★★★★★★★★★*/
+/*釣り船ナビ*/
+.ship__nav {
+  padding: 5px 10px 13px;
+}
+.ship__nav_block {
+}
+.ship__nav_set {
+}
+.ship__nav_set_list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-start;
+}
+.ship__nav_set_list_item {
+  width: 80%;/*この値はおかしい。calc(100% / 4)とかで、かつ一つ目だけは少し広くする。文字数の関係で*/
+  margin: 0 5px;
+}
+.ship__nav_set_list_item:first-of-type {
+  width: 100%;
+}
+.ship__nav_set_list_item a {
+}
+.ship__nav_set_list_item span {
+}
+.ship__nav_set_list_item a,
+.ship__nav_set_list_item span {
+  font-size: 1.6rem;
+  color: #419ef0;
+  font-weight: bold;
+  padding: 15px 0 10px;
+  border-bottom: #419ef0 2px solid;
+  display: block;
+  text-align: center;
+}
+
+/*釣り船紹介*/
+.ship__intro {
+  padding: 5px 20px 25px;
+}
+.ship__intro_block {
+}
+/*紹介文*/
+.ship__intro_txt {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  overflow: hidden;
+  transition: .2s;
+  position: relative;
+  height: calc(5em * 1.8);
+}
+.ship__intro_txt::after {
+  content: "";
+  background:linear-gradient(0deg, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 0) 100%);
+  height: calc(3em * 1.8);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.ship__intro_txt.open {
+  margin-bottom: -3px;
+}
+.ship__intro_txt.open::after {
+  content: none;
+}
+.ship__intro_txt_btn {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  cursor: pointer;
+  margin-top: calc(-1em * 1.8 * .75);
+  position: relative;
+  z-index: 1;
+}
+.ship__intro_txt_btn span {
+  display: block;
+  border: #666666 1px solid;
+  border-radius: 50px;
+  padding: 5px 27px 5px 11px;
+  background: #fff;
+}
+.ship__intro_txt_btn span b {
+  font-size: 1.4rem;
+  position: relative;
+}
+.ship__intro_txt_btn span b::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, -80%) rotate(-45deg);
+  border: 1px solid #1a1a1a;
+  border-top: none;
+  border-right: none;
+}
+
+/*メッセージ*/
+.ship__intro_message {
+  margin: 20px 0 0;
+}
+.ship__intro_message_heading {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  margin: 0 0 4px;
+}
+.ship__intro_message_heading_icon {
+  flex-shrink: 0;
+  margin: 0 2px 0 0;
+}
+.ship__intro_message_heading_icon img {
+  width: 60px;
+}
+.ship__intro_message_heading_title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 2px 0 0;
+}
+.ship__intro_message_txt {
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+.ship__intro_message_txt::before {
+  content: "『";
+}
+.ship__intro_message_txt::after {
+  content: "』";
+}
+
+
+/*レビュー用スタイル
+
+<div class="ship__intro_message">
+<p class="ship__intro_message_title">釣り船からのメッセージ</p>
+<div class="ship__intro_message_info">
+<p class="ship__intro_message_info_icon"><img src="/img/ship/message_icon.png"></p>
+<p class="ship__intro_message_info_txt">打木屋は、元町・中華街駅から徒歩5分の横浜のド真ん中にあるちょっと古い釣船屋です。日々海に出ている漁師気質な船長、釣らせる気合満々でお客さまのお越しをお待ちしております。</p>
+</div>
+</div>
+
+.ship__intro_message {
+  margin: 18px 0 0;
+}
+.ship__intro_message_title {
+  color: #d93e46;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+}
+.ship__intro_message_info {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.ship__intro_message_info_icon {
+  flex-shrink: 0;
+  margin-left: -1px;
+}
+.ship__intro_message_info_icon img {
+  width: 36px;
+}
+.ship__intro_message_info_txt {
+  flex-grow: 1;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  border: #d93e46 1px solid;
+  border-radius: 4px;
+  padding: 9px 12px 8px;
+  margin: 0 0 0 13px;
+  position: relative;
+}
+.ship__intro_message_info_txt::before,
+.ship__intro_message_info_txt::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 11px 7px 0;
+  border-color: transparent;
+  position: absolute;
+  top: 17px;
+  left: 0;
+  transform: translate(-100%, -50%)
+}
+.ship__intro_message_info_txt:before {
+  border-right-color: #d93e46;
+  left: 0;
+}
+.ship__intro_message_info_txt:after {
+  border-right-color: #fff;
+  left: 2px;
+}
+*/
+
+/*おすすめコメント*/
+.ship__intro_recommend {
+  margin: 17px 0 0;
+  padding: 12px 12px 11px;
+  background: #fff;
+  border: #1482e3 3px solid;
+  border-radius: 7px;
+}
+.ship__intro_recommend_heading {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  margin: 0 0 5px;
+}
+.ship__intro_recommend_heading_icon {
+  flex-shrink: 0;
+  margin: 0 6px 0 0;
+}
+.ship__intro_recommend_heading_icon img {
+  width: 29px;
+}
+.ship__intro_recommend_heading_title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #1482e3;
+}
+.ship__intro_recommend_txt {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #002840;
+  margin: 0 3px;
+}
+
+/*お試しモニター中！*/
+.ship__trial {
+  padding: 20px 15px 5px;
+  background: #d6d6d6;
+}
+.ship__trial_block {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.ship__trial_detail {
+  position: relative;
+}
+.ship__trial_detail figure {
+}
+.ship__trial_detail figure img {
+  max-width: 100%;
+  width: auto;
+}
+.ship__trial_detail_day {
+  position: absolute;
+  top: 64%;
+  left: 8.2%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: flex-start;
+}
+.ship__trial_detail_day span {
+  flex-shrink: 0;
+}
+.ship__trial_detail_day span img {
+  width: 24px;
+  width: 6.4vw;
+  max-width: 48px;
+}
+.ship__trial_detail_day em {
+  font-size: 5.6vw;
+  color: #ff0000;
+  font-weight: bold;
+  margin: 0 1px -2px 3px;
+  font-family: Arial, Helvetica, "sans-serif";
+}
+.ship__trial_detail_day b {
+  font-size: 3.5vw;
+  color: #000000;
+  font-weight: bold;
+}
+
+
+
+/*釣り船予約プラン*/
+.ship__plan {
+}
+.ship__plan_block {
+  border-top: #d6d6d6 15px solid;
+}
+.ship__plan_header {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship__plan_header_title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 18px 15px 17px;
+}
+.ship__plan_header_match {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+  background: #fa4641;
+  border-radius: 2px;
+  padding: 0 8px 0;
+  margin: 0 0 0 4px;
+  position: relative;
+  height: 2em;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+.ship__plan_header_match::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 11px 7px 0;
+  border-color: transparent #fa4641 transparent transparent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%,-50%);
+}
+.ship__plan_header_match em {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 1px 0 1px;
+}
+.ship__plan_nodata {
+}
+.ship__plan_nodata_image {
+}
+
+
+/*釣り船情報*/
+.ship__detail {
+}
+.ship__detail_block {
+  border-top: #d6d6d6 15px solid;
+}
+.ship__detail_title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 15px;
+}
+.ship__detail_list {
+}
+.ship__detail_list_item {
+  padding: 18px 0 0;
+  margin: 15px 15px 15px;
+  border-top: #cccccc 1px solid;
+}
+.ship__detail_list_item:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 15px;
+}
+.ship__detail_list_item_title {
+  color: #2a86d8;
+  font-size: 1.6rem;
+  margin: 0 0 6px;
+  font-weight: bold;
+}
+.ship__detail_list_item_txt {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+.ship__detail_list_item_txt_kana {
+  font-size: 1.1rem;
+  line-height: 1.25;
+  margin: 4px 0 0;
+  color: #999999;
+  display: block;
+  font-weight: normal;
+}
+.ship__detail_list_item_txt a {
+  font-size: 1.6rem;
+  text-decoration: underline;
+}
+.ship__detail_list_item_txt_equip {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship__detail_list_item_txt_equip_item {
+  margin: 3px;
+}
+.ship__detail_list_item_txt_equip_item.off {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+
+/*釣り船地図*/
+.ship__map {
+}
+.ship__map_block {
+  border-top: #d6d6d6 15px solid;
+}
+.ship__map_title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 15px;
+}
+.ship__map_view {
+  width: 100%;
+  height: 35vh;
+  background: #AADAFF;
+  position: relative;
+  z-index: 0;
+}
+
+/*所在地*/
+.ship__map_place {
+  margin: 20px 15px 20px;
+}
+.ship__map_place_address {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship__map_place_address dt {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+  margin: 0 4px 0 0;
+}
+.ship__map_place_address dd {
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+.ship__map_place_txt {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  margin: 8px 0 0;
+}
+/*車と電車*/
+.ship__map_common_transport {
+  border-bottom: #d9d9d9 1px solid;
+}
+.ship__map_common_transport_block {
+}
+.ship__map_common_transport_title {
+  padding: 11px 40px 11px 15px;
+  border-top: #d9d9d9 1px solid;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  cursor: pointer;
+}
+.ship__map_common_transport_title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  transform: translate(-50%, -75%) rotate(-45deg);
+  border: 2px solid #999999;
+  border-top: none;
+  border-right: none;
+  top: 50%;
+  right: 10px;
+  transition: .15s;
+}
+.ship__map_common_transport_title.open::after {
+  transform: translate(-50%, -25%) rotate(135deg);
+}
+.ship__map_common_transport_title span {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  flex-grow: 1;
+  color: #419ef0;
+  font-weight: bold;
+}
+.ship__map_common_transport_detail {
+  margin: 3px 20px 30px;
+}
+.ship__map_common_transport_detail_list {
+  margin-top: 10px;
+}
+.ship__map_common_transport_detail_list:first-of-type {
+  margin-top: 0;
+}
+.ship__map_common_transport_detail_list dt {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #114e83;
+}
+.ship__map_common_transport_detail_list dd {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.ship__map_link {
+  margin: 25px 20px 0;
+}
+.ship__map_link a {
+  display: block;
+  background: #419ef0;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 6px;
+  max-width: 440px;
+  margin: 0 auto;
+  letter-spacing: .5px;
+}
+
+.ship__map_legend {
+  margin: 10px 0 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  display: none;
+}
+.ship__map_legend_item {
+  margin: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+
+/*よくあるご質問*/
+.ship__pagefaq {
+  margin: 35px 0 0;
+}
+
+
+
+
+/*横スライド用マスク*/
+.ship__modal_common_mask {
+  position: fixed;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.65);
+  z-index: 1000;
+}
+
+
+/*写真（横スライドで表示）*/
+.ship__modal_photo {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: -105vw;
+  z-index: 1100;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,.6);
+  background-color: #fff;
+  transition: transform .2s;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.ship__modal_photo.open {
+  transform: translateX(-105vw);
+}
+.ship__modal_photo_block {
+  flex-grow: 1;
+}
+.ship__modal_photo_close {
+  background: #1a4473;
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  padding: 7px 0;
+}
+.ship__modal_photo_close_btn {
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.ship__modal_photo_close_btn span {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 10px 13px 10px 29px;
+  position: relative;
+  display: block;
+}
+.ship__modal_photo_close_btn span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+}
+.ship__modal_photo_close_info {
+  flex-grow: 1;
+  padding: 0 56px 0 0;
+}
+.ship__modal_photo_close_info_title {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+.ship__modal_photo_close_info_title span {
+  font-size: .9em;
+  font-feature-settings: normal;
+}
+
+/*サムネイル*/
+.ship__modal_photo_thumblist {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  padding: 1.5px 1.5px 200px;
+  overflow-y: scroll;
+  height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.ship__modal_photo_thumblist::-webkit-scrollbar {
+  display: none;
+}
+.ship__modal_photo_thumblist_item {
+  width: calc(100% / 3);
+  padding: 1.5px;
+  cursor: pointer;
+}
+.ship__modal_photo_thumblist_item img {
+  object-fit: cover;
+  height: calc((100vw / 3) - 4vw);
+  filter: brightness(1.1);
+}
+
+/*横スライド内のオーバーレイ*/
+.ship__modal_photo_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: .2s;
+}
+.ship__modal_photo_overlay.on {
+  opacity: 1;
+  pointer-events: auto;
+}
+.ship__modal_photo_overlay_inner {
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0 0 20vh;
+}
+.ship__modal_photo_overlay_block {
+  background: #000;
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: center;
+  position: relative;
+}
+/*閉じるボタン*/
+.ship__modal_photo_overlay_close {
+  position: absolute;
+  top: 1px;
+  right: 11px;
+  font-size: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*スライドの画像と文字*/
+.ship__modal_photo_slide_photo {
+}
+.ship__modal_photo_slide_photo img {
+  filter: brightness(1.1);
+}
+.ship__modal_photo_slide_txt {
+  text-align: center;
+  position: absolute;
+  bottom: -60px;
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  transform: translate(0,-100%);
+}
+.ship__modal_photo_slide_txt span {
+  color: rgba(255,255,255,.8);
+  font-size: 1.6rem;
+}
+
+
+
+/*地図（横スライドで表示）*/
+.ship__modal_access {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: -105vw;
+  z-index: 1100;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,.6);
+  background-color: #fff;
+  transition: transform .2s;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.ship__modal_access.open {
+  transform: translateX(-105vw);
+}
+.ship__modal_access_block {
+  flex-grow: 1;
+}
+.ship__modal_access_close {
+  background: #1a4473;
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  padding: 7px 0;
+}
+.ship__modal_access_close_btn {
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.ship__modal_access_close_btn span {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 10px 13px 10px 29px;
+  position: relative;
+  display: block;
+}
+.ship__modal_access_close_btn span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+}
+.ship__modal_access_close_info {
+  flex-grow: 1;
+  padding: 0 56px 0 0;
+}
+.ship__modal_access_close_info_title {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+.ship__modal_access_close_info_title span {
+  font-size: .9em;
+  font-feature-settings: normal;
+}
+
+/*スクロールする枠*/
+.ship__modal_access_unit {
+  overflow-y: scroll;
+  height: 100vh;
+  padding: 0 0 200px;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.ship__modal_access_unit::-webkit-scrollbar {
+  display: none;
+}
+
+/*所在地*/
+.ship__modal_access_unit_place {
+  margin: 20px 15px 20px;
+}
+.ship__modal_access_unit_place_address {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship__modal_access_unit_place_address dt {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+  margin: 0 4px 0 0;
+}
+.ship__modal_access_unit_place_address dd {
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+.ship__modal_access_unit_place_txt {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  margin: 8px 0 0;
+}
+/*車と電車*/
+.ship__modal_common_access_unit_transport {
+  border-bottom: #d9d9d9 1px solid;
+}
+.ship__modal_common_access_unit_transport_block {
+}
+.ship__modal_common_access_unit_transport_title {
+  padding: 11px 40px 11px 15px;
+  border-top: #d9d9d9 1px solid;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  cursor: pointer;
+}
+.ship__modal_common_access_unit_transport_title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  transform: translate(-50%, -75%) rotate(-45deg);
+  border: 2px solid #999999;
+  border-top: none;
+  border-right: none;
+  top: 50%;
+  right: 10px;
+  transition: .15s;
+}
+.ship__modal_common_access_unit_transport_title.open::after {
+  transform: translate(-50%, -25%) rotate(135deg);
+}
+.ship__modal_common_access_unit_transport_title span {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  flex-grow: 1;
+  color: #419ef0;
+  font-weight: bold;
+}
+.ship__modal_common_access_unit_transport_detail {
+  margin: 3px 20px 30px;
+}
+.ship__modal_common_access_unit_transport_detail_list {
+  margin-top: 10px;
+}
+.ship__modal_common_access_unit_transport_detail_list:first-of-type {
+  margin-top: 0;
+}
+.ship__modal_common_access_unit_transport_detail_list dt {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #114e83;
+}
+.ship__modal_common_access_unit_transport_detail_list dd {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+/*googlemap*/
+.ship__modal_access_unit_map {
+  margin: 20px 0 0;
+  position: relative;
+  z-index: 0;
+}
+.ship__modal_access_unit_map_view {
+  height: 50vh;
+  width: 100%;
+}
+.ship__modal_access_unit_link {
+  margin: 20px 20px 0;
+}
+.ship__modal_access_unit_link a {
+  display: block;
+  background: #419ef0;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 6px;
+  max-width: 440px;
+  margin: 0 auto;
+  letter-spacing: .5px;
+}
+
+.ship__modal_access_unit_legend {
+  display: none;
+}
+
+
+
+
+
+
+
+/*釣り船プラン*/
+.ship_plan__whole {
+  background-position: center top;
+  background-size: 100vw auto;
+  background-repeat: no-repeat;
+  background-color: #000;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+}
+.ship_plan__whole::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.ship_plan__whole::after {
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
+}
+.ship_plan__whole_block {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+
+/*上部固定ヘッダー*/
+.ship_plan__whole_heading {
+  padding: 7px 10px 7px;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 49px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  align-content: flex-start;
+  position: relative;/*iPhone6対応*/
+  position: sticky;
+  top: 0;
+  background-position: center top;
+  background-size: 100vw auto;
+  background-repeat: no-repeat;
+  background-color: #000;
+  z-index: 20;
+}
+.ship_plan__whole_heading::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.ship_plan__whole_heading_ship {
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 0 10px;
+  line-height: 1.3;
+}
+.ship_plan__whole_heading_plan {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  margin: 0 30px 0 0;
+}
+.ship_plan__whole_heading_plan span {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 40px;
+  height: 20px;
+  padding: 1px 0 0;
+  border-radius: 100px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.ship_plan__whole_heading_plan.share span {
+  background-color: #27c277;
+}
+.ship_plan__whole_heading_plan.charter span {
+  background-color: #fb8a19;
+}
+.ship_plan__whole_heading_plan strong {
+  margin: 0 0 0 8px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #fff;
+}
+.ship_plan__whole_heading_close {
+  position: absolute;
+  top: 9px;
+  right: 4px;
+  display: block;
+}
+
+/*プランのメイン枠*/
+.ship_plan__whole_unit {
+  background: #fff;
+  padding: 30px 0 100px;
+  -webkit-overflow-scrolling: touch;
+  flex-grow: 1;
+  width: 100%;
+  /*box-shadow: 0 0 8px rgba(0,0,0,.4);*/
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.ship_plan__whole_unit::-webkit-scrollbar {
+  display: none;
+}
+
+/*選択済み条件*/
+.ship_plan__whole_unit_selected {
+  margin: 27px 15px 22px;
+}
+.ship_plan__whole_unit_selected_block {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.ship_plan__whole_unit_selected_item {
+  width: 100%;
+}
+.ship_plan__whole_unit_selected_item:first-of-type {
+  margin-right: 6px;
+}
+.ship_plan__whole_unit_selected_item:not(:first-of-type) {
+  margin-left: 6px;
+}
+.ship_plan__whole_unit_selected_item_btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 4px;
+  border: #419ef0 1px solid;
+  box-shadow: 0 0 0 2px #ebebeb inset;
+}
+.ship_plan__whole_unit_selected_item_btn i {
+  flex-shrink: 0;
+  margin: 0 2px 0 10px;
+  display: none;
+}
+.ship_plan__whole_unit_selected_item_btn i img {
+  width: 25px;
+}
+.ship_plan__whole_unit_selected_item_btn span {
+  flex-grow: 1;
+  overflow: hidden;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+  margin: 1px 0 0 0;
+  color: #419ef0;
+}
+.ship_plan__whole_unit_selected_item_txt {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 5px 0 0 0;
+  padding: 0 0 0 9px;
+  text-align: center;
+  color: #1E84DD;
+  position: relative;
+}
+.ship_plan__whole_unit_selected_item_txt::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 5px 8.5px 5px;
+  border-color: transparent transparent #1E84DD transparent;
+  position: absolute;
+  top: 50%;
+  transform: translate(-11px,-50%);
+}
+
+/*基本情報*/
+.ship_plan__whole_unit_key {
+  padding: 0 15px;
+}
+.ship_plan__whole_unit_key_title {
+  border: #808080 1px solid;
+  border-left: none;
+  border-right: none;
+  padding: 16px 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  position: relative;
+}
+.ship_plan__whole_unit_key_title::before {
+  content: "";
+  width: calc(100% - 8px);
+  height: 1px;
+  background: #808080;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  margin: 0 4px;
+}
+.ship_plan__whole_unit_key_title::after {
+  content: "";
+  width: calc(100% - 8px);
+  height: 1px;
+  background: #808080;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  margin: 0 4px;
+}
+.ship_plan__whole_unit_key_title span {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  color: #fff;
+}
+.ship_plan__whole_unit_key_title.share span {
+  background-color: #27c277;
+}
+.ship_plan__whole_unit_key_title.charter span {
+  background-color: #fb8a19;
+}
+.ship_plan__whole_unit_key_title strong {
+  margin: 0 0 0 10px;
+  font-size: 1.9rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+/*前日割残席*/
+.ship_plan__whole_unit_seat_advance {
+  margin: 10px 10px -19px;
+  display: none;
+}
+.ship_plan__whole_unit_seat_advance_txt {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+}
+.ship_plan__whole_unit_seat_advance_txt b {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #fa4641;
+  margin: 0 1px 0 1px;
+}
+
+/*魚種/出船/帰港*/
+.ship_plan__whole_unit_purpose {
+  margin: 20px 0 0;
+}
+.ship_plan__whole_unit_purpose_fishlist {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship_plan__whole_unit_purpose_fishlist_item {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: #dcf3fc;
+  padding: 7px 7px 5px;
+  border-radius: 3px;
+  margin: 0 8px 8px 0;
+  color: #1b73c1;
+  white-space: nowrap;
+}
+.ship_plan__whole_unit_purpose_fishlist_item span {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+.ship_plan__whole_unit_purpose_schedule {
+  margin: 1px 0 0;
+}
+.ship_plan__whole_unit_purpose_schedule_time {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: flex-start;
+}
+.ship_plan__whole_unit_purpose_schedule_time_goout {
+}
+.ship_plan__whole_unit_purpose_schedule_time_back {
+}
+.ship_plan__whole_unit_purpose_schedule_time_back::before {
+  content: "～ ";
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0 0 .4em;
+}
+.ship_plan__whole_unit_purpose_schedule_time_back em,
+.ship_plan__whole_unit_purpose_schedule_time_goout em {
+  font-size: 2.1rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, "sans-serif";
+}
+.ship_plan__whole_unit_purpose_schedule_time_goout span,
+.ship_plan__whole_unit_purpose_schedule_time_back span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 0 0 2px;
+}
+
+.ship_plan__whole_unit_purpose_schedule_time_charter {
+  margin: 5px 0 7px;
+}
+.ship_plan__whole_unit_purpose_schedule_time_charter_list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.ship_plan__whole_unit_purpose_schedule_time_charter_list:not(:first-of-type) {
+  margin-top: 5px;
+}
+.ship_plan__whole_unit_purpose_schedule_time_charter_list dt {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 5px 0 0;
+  border-radius: 3px;
+  border: #1a1a1a 1px solid;
+  padding: 6px 5px;
+}
+.ship_plan__whole_unit_purpose_schedule_time_charter_list dt span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.ship_plan__whole_unit_purpose_schedule_time_charter_list dd {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+.ship_plan__whole_unit_purpose_schedule_time_charter_list dd span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+
+
+.ship_plan__whole_unit_purpose_schedule_gather {
+  font-size: 1.3rem;
+  margin: 4px 0 0;
+}
+
+/*価格/ポイント*/
+.ship_plan__whole_unit_cost {
+  text-align: right;
+  margin: 10px 0 0;
+}
+.ship_plan__whole_unit_cost_set {
+  text-align: right;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.ship_plan__whole_unit_cost_price {
+}
+.ship_plan__whole_unit_cost_price_main {
+  color: #fa4641;
+  font-weight: bold;
+}
+.ship_plan__whole_unit_cost_price_main strong {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 1.8rem;
+}
+.ship_plan__whole_unit_cost_price_main em {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 3.4rem;
+  font-family: Arial, Helvetica, "sans-serif";
+  letter-spacing: -.5px;
+}
+.ship_plan__whole_unit_cost_price_main span {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 1.8rem;
+}
+.ship_plan__whole_unit_cost_price_main b {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 1.4rem;
+}
+.ship_plan__whole_unit_cost_price_main_sup {
+  color: #fa4641;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 4px 0 0;
+}
+.ship_plan__whole_unit_cost_price_main_sup:empty {
+  display: none;
+}
+
+.ship_plan__whole_unit_cost_price_main_normal {
+  color: #bfbfbf;
+  font-weight: bold;
+  text-decoration: line-through;
+  margin: 0 5px 4px 0;
+}
+.ship_plan__whole_unit_cost_price_main_normal strong {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 1.3rem;
+}
+.ship_plan__whole_unit_cost_price_main_normal em {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 2rem;
+  font-family: Arial, Helvetica, "sans-serif";
+  letter-spacing: -.5px;
+}
+.ship_plan__whole_unit_cost_price_main_normal span {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 1.2rem;
+}
+
+.ship_plan__whole_unit_cost_price_main_advance {
+  color: #00a308;
+  font-weight: bold;
+  display: none;
+}
+.ship_plan__whole_unit_cost_price_main_advance strong {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 1.8rem;
+}
+.ship_plan__whole_unit_cost_price_main_advance em {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 3.4rem;
+  font-family: Arial, Helvetica, "sans-serif";
+  letter-spacing: -.5px;
+}
+.ship_plan__whole_unit_cost_price_main_advance span {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 1.8rem;
+}
+.ship_plan__whole_unit_cost_price_main_advance b {
+  color: inherit;
+  font-weight: inherit;
+  font-size: 1.4rem;
+}
+
+.ship_plan__whole_unit_cost_price_other {
+  margin: 4px 0 0 auto;
+  font-size: 1.4rem;
+  display: none;
+}
+.ship_plan__whole_unit_cost_price_other tr {
+}
+.ship_plan__whole_unit_cost_price_other th,
+.ship_plan__whole_unit_cost_price_other td {
+  padding: 2px;
+  font-weight: bold;
+}
+.ship_plan__whole_unit_cost_price_other th {
+}
+.ship_plan__whole_unit_cost_price_other td {
+}
+.ship_plan__whole_unit_cost_price_other td em {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.ship_plan__whole_unit_cost_price_aten {
+  font-size: 1.2rem;
+  margin: 5px 0 0 1em;
+  display: block;
+  text-indent: -1em;
+}
+.ship_plan__whole_unit_cost_price_aten::before {
+  content: "※";
+  color: #fa4641;
+}
+.ship_plan__whole_unit_cost_advance {
+  margin: 7px 0 0;
+  display: none;
+}
+.ship_plan__whole_unit_cost_advance_txt {
+  background: #00a308;
+  display: inline-block;
+  padding: 2px 3px 3px 7px;
+  border-radius: 3px;
+}
+.ship_plan__whole_unit_cost_advance_txt span {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.ship_plan__whole_unit_cost_advance_txt b {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, "sans-serif";
+  margin: 0 1px;
+}
+.ship_plan__whole_unit_cost_advance_txt em {
+  color: #fff;
+  /*color: #fff100;*/
+  font-size: 1.3rem;
+}
+.ship_plan__whole_unit_cost_point {
+  border-top: #808080 1px dashed;
+  padding: 10px 0 0;
+  margin: 10px 0 0;
+}
+.ship_plan__whole_unit_cost_point_double,
+.ship_plan__whole_unit_cost_point_triple,
+.ship_plan__whole_unit_cost_point_trial {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+.ship_plan__whole_unit_cost_point_double {
+  color: #21a511;
+}
+.ship_plan__whole_unit_cost_point_triple {
+  color: #ec2ccc;
+}
+.ship_plan__whole_unit_cost_point_trial {
+  color: #4171fa;
+}
+.ship_plan__whole_unit_cost_point_num {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: flex-start;
+}
+.ship_plan__whole_unit_cost_point_num_before {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: line-through;
+  font-family: Arial, Helvetica, "sans-serif";
+  margin: 0 5px 0 0;
+}
+.ship_plan__whole_unit_cost_point_num_txt,
+.ship_plan__whole_unit_cost_point_num_txt_advance {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, "sans-serif";
+  background: #fff100;
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+.ship_plan__whole_unit_cost_point_num_txt.share,
+.ship_plan__whole_unit_cost_point_num_txt_advance.share {
+  color: #1a1a1a;
+}
+.ship_plan__whole_unit_cost_point_num_txt.charter,
+.ship_plan__whole_unit_cost_point_num_txt_advance.charter {
+  color: #fa4641;
+}
+.ship_plan__whole_unit_cost_point_num_txt_advance {
+  display: none;
+}
+.ship_plan__whole_unit_cost_point_aten,
+.ship_plan__whole_unit_cost_point_aten_advance {
+  font-size: 1.2rem;
+  margin: 7px 0 0 1em;
+  display: block;
+  text-indent: -1em;
+}
+.ship_plan__whole_unit_cost_point_aten::before,
+.ship_plan__whole_unit_cost_point_aten_advance::before {
+  content: "※";
+  color: #fa4641;
+}
+.ship_plan__whole_unit_cost_point_aten_advance {
+  display: none;
+}
+
+
+/*価格/ポイントの前日割表示切替用*/
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_cost_price_main_advance { /*前日割 価格*/
+  display: block;
+}
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_cost_advance { /*前日割 残席数*/
+  display: block;
+}
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_seat_advance { /*前日割 残席数 Ver2*/
+  display: block;
+}
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_cost_point_num_txt_advance { /*前日割 500ポイント*/
+  display: block;
+}
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_cost_point_aten_advance { /*前日割 注意文*/
+  display: block;
+}
+
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_cost_price_main { /*釣割 価格 枠*/
+  display: none;
+}
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_cost_price_main_sup { /*釣割 価格 仕立て1人あたり増員価格*/
+  color: #00a308;
+}
+
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_cost_price_main_normal { /*通常 価格 枠*/
+  display: block;
+}
+
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_cost_point_num_before { /*釣割 通常ポイント*/
+  display: none;
+}
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_cost_point_num_txt { /*釣割 通常ポイント 倍率計算後*/
+  display: none;
+}
+
+.ship_plan__whole_unit .ship_plan__whole_unit_detail_list_item.discount { /*プラン詳細 リクエスト予約 釣割価格 */
+  display: block;
+}
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_detail_list_item.discount { /*プラン詳細 前日割予約 釣割価格 */
+  display: none;
+}
+.ship_plan__whole_unit .ship_plan__whole_unit_detail_list_item.advance { /*プラン詳細 リクエスト予約 前日割価格 */
+  display: none;
+}
+.ship_plan__whole_unit.advance .ship_plan__whole_unit_detail_list_item.advance { /*プラン詳細 前日割予約 前日割価格 */
+  display: block;
+}
+
+.index__overlay.advance .index__overlay_search_people_list li.disabled { /*オーバーレイ日付選択 */
+  display: none;
+}
+
+
+/*予約ボタン*/
+.ship_plan__whole_unit_rsvbtn {
+  margin: 18px 5px 0;
+}
+.ship_plan__whole_unit_rsvbtn a {
+  display: block;
+  background: #fa4641;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 6px;
+}
+
+
+/*詳細情報*/
+.ship_plan__whole_unit_detail {
+  border-top: #d6d6d6 15px solid;
+  padding: 30px 0 120px;
+  margin: 30px 0 0;
+}
+.ship_plan__whole_unit_detail_key {
+  padding: 0 15px;
+}
+.ship_plan__whole_unit_detail_key_title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+.ship_plan__whole_unit_detail_key_image {
+  margin: 0 10px 20px;
+  text-align: center;
+}
+.ship_plan__whole_unit_detail_key_image img {
+  max-width: 360px;
+  filter: brightness(1.1);
+}
+.ship_plan__whole_unit_detail_key_txt {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin: 0 5px;
+}
+.ship_plan__whole_unit_detail_list {
+  margin: 25px 0 0;
+}
+.ship_plan__whole_unit_detail_list_item {
+  padding: 20px 15px;
+  border-top: #cccccc 1px solid;
+}
+.ship_plan__whole_unit_detail_list_item_title {
+  color: #2a86d8;
+  font-size: 1.6rem;
+  margin: 0 0 5px;
+  font-weight: bold;
+}
+.ship_plan__whole_unit_detail_list_item_txt {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+.ship_plan__whole_unit_detail_list_item_title b,
+.ship_plan__whole_unit_detail_list_item_txt b {
+  text-decoration: line-through;
+  font-weight: inherit;
+}
+
+/*下部固定予約ボタン*/
+.ship_plan__whole_unit_fixbtm {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.ship_plan__whole_unit_fixbtm_block {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 10px 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,.4);
+}
+.ship_plan__whole_unit_fixbtm_rsvbtn {
+  margin: 0 5px 0;
+}
+.ship_plan__whole_unit_fixbtm_rsvbtn a {
+  display: block;
+  background: #fa4641;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 6px;
+}
+
+/*釣果*/
+.ship_catch__close {
+  background: #1a4473;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  padding: 7px 0;
+}
+.ship_catch__close_btn {
+  flex-shrink: 0;
+}
+.ship_catch__close_btn a {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 10px 13px 10px 29px;
+  position: relative;
+  display: block;
+}
+.ship_catch__close_btn a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+}
+.ship_catch__close_info {
+  flex-grow: 1;
+  padding: 0 56px 0 0;
+}
+.ship_catch__close_info_title {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+.ship_catch__close_info_title span {
+  font-size: .9em;
+  font-feature-settings: normal;
+}
+
+
+
+
+
+.ship_catch__wrap {
+  padding: 45px 0 200px;
+}
+
+/*横スライド地図（OpenStreetMap）の操作ボタン表示バグ対応*/
+.leaflet-top, .leaflet-bottom {
+  transform: translate3d(0px, 0px, 0px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

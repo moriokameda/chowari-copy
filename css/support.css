@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+/*お問い合わせ*/
+.inquiry__block {
+  min-height: 30vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.inquiry__block strong {
+  color: #419ef0;
+  color: #fa4641;
+  font-weight: bold;
+}
+.inquiry__block_key {
+  text-align: center;
+  margin: 0 -15px;
+}
+.inquiry__block_key picture {
+}
+.inquiry__block_key picture img,
+.inquiry__block_key picture source {
+}
+
+/*タブレット表示の特別調整*/
+@media screen and (min-width:600px) {
+  .inquiry__block_key picture img,
+  .inquiry__block_key picture source {
+    width: auto;
+    max-width: 100%;
+  }
+}
+.inquiry__block_faq_txt {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  padding: 0 5px;
+  margin-top: -5px;/*key画像無しのとき*/
+  margin-top: 18px;
+}
+.inquiry__block_faq_btn {
+  margin-top: 13px;
+  padding: 0 5px;
+}
+.inquiry__block_faq_btn a {
+  display: block;
+  background: #fff;
+  padding: 17px 10px 16px;
+  border: #1a1a1a 1px solid;
+  color: #1a1a1a;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 6px;
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+}
+.inquiry__block_form_txt {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-top: 22px;
+  padding: 0 5px;
+}
+.inquiry__block_form_txt br {
+  display: none;
+}
+.inquiry__block_form_btn {
+  margin-top: 15px;
+  padding: 0 5px;
+}
+.inquiry__block_form_btn a {
+  background: #419ef0;
+  color: #fff;
+  display: block;
+  padding: 21px 10px 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 6px;
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+}
+.inquiry__block_form_aten {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin: 10px 0 30px;
+  color: #808080;
+  text-align: center;
+  padding: 0 5px;
+}
+
+@media screen and (min-width:769px) {
+  .inquiry__block_faq_txt {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .inquiry__block_form_txt br {
+    display: inline;
+  }
+  .inquiry__block_faq_btn {
+    margin-top: 17px;
+  }
+  .inquiry__block_form_btn {
+    margin-top: 17px;
+  }
+  .inquiry__block_form_txt {
+    margin-top: 42px;
+    text-align: center;
+  }
+}
+
+
+
+
+
+/*釣り船（遊漁船）業者様へ*/
+.traders__block {
+  min-height: 30vh;
+  max-width: 970px;
+  margin: 0 auto;
+}
+.traders__block strong {
+  color: #419ef0;
+  color: #fa4641;
+  font-weight: bold;
+}
+.traders__block_key {
+  text-align: center;
+}
+.traders__block_key picture {
+}
+.traders__block_key picture img,
+.traders__block_key picture source {
+}
+
+/*タブレット表示の特別調整*/
+@media screen and (min-width:600px) {
+  .traders__block_key picture img,
+  .traders__block_key picture source {
+    width: auto;
+    max-width: 100%;
+  }
+}
+.traders__block_title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 1.38;
+  text-align: center;
+  margin: 20px 0 0;
+  color: #419ef0;
+  padding: 0 15px;
+  background: -webkit-linear-gradient(0deg, #31a6f5 0%, #34C27B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.traders__block_txt {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  padding: 0 20px;
+  margin: 13px 0 0;
+}
+.traders__block_btn {
+  margin-top: 15px;
+  padding: 0 20px;
+}
+.traders__block_btn a {
+  background: #419ef0;
+  color: #fff;
+  display: block;
+  padding: 21px 10px 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 6px;
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+}
+.traders__block_aten {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin: 10px 0 0;
+  color: #808080;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.traders__block_tel {
+  background: #fff4dd;
+  padding: 30px 25px;
+  margin: 30px auto 20px;
+  max-width: 700px;
+}
+.traders__block_tel_title {
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: #fa4641;
+  text-align: center;
+}
+.traders__block_tel_btn {
+  margin-top: 15px;
+}
+.traders__block_tel_btn a {
+  background: #fff;
+  padding: 10px 10px 13px;
+  border: #fa4641 1.5px solid;
+  border-radius: 8px;
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.traders__block_tel_btn_icon {
+  flex-shrink: 0;
+  margin: 5px 6px 0 0;
+  border-radius: 100px;
+  padding: 6px;
+  background: #fff;
+  border: rgba(250,70,65,.8) 1px solid;
+}
+.traders__block_tel_btn_icon path {
+  fill: #fa4641;
+}
+.traders__block_tel_btn_info {
+  text-align: center;
+  margin: 0 6px 0 0;
+}
+.traders__block_tel_btn_num {
+  font-size: 32px;/*px=ok*/
+  font-weight: bold;
+  color: #fa4641;
+  font-family: Arial, Helvetica, "sans-serif";
+}
+.traders__block_tel_btn_txt {
+  font-size: 14px;/*px=ok*/
+  color: #fa4641;
+  margin: 2px 0 0;
+}
+
+@media screen and (min-width:769px) {
+  .traders__block_title {
+    font-size: 4rem;
+    margin: 25px 0 0;
+  }
+  .traders__block_txt {
+    text-align: center;
+    margin: 14px 0 0;
+  }
+  .traders__block_btn {
+    margin-top: 22px;
+  }
+  .traders__block_tel {
+    margin-top: 50px;
+  }
+  .traders__block_tel_title {
+    font-size: 2.8rem;
+  }
+  .traders__block_tel_btn {
+    margin-top: 20px;
+  }
+  .traders__block_tel_btn a {
+    pointer-events: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+

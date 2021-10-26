@@ -1,0 +1,330 @@
+@charset "utf-8";
+
+/*お試し船一覧*/
+.search_trial__key {
+  background: #f0f0f0;
+  padding: 0 0 2px;
+}
+.search_trial__key_block {
+  max-width: 970px;
+  margin: 0 auto;
+}
+.search_trial__key_image {
+  position: relative;
+  background: #016DAF;
+}
+.search_trial__key_image_photo {
+}
+.search_trial__key_image_photo picture {
+}
+.search_trial__key_image_photo picture img,
+.search_trial__key_image_photo picture source {
+}
+.search_trial__key_num {
+  background: #0063d2;
+  padding: 10px 15px 8px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/*お試し船一覧ボタン*/
+.search__trial {
+  background: #f0f0f0;
+}
+.search__trial_block {
+  margin: 0 auto;
+  padding: 22px 15px 2px;
+  width: 970px;
+}
+.search__trial_btn {
+  text-align: center;
+}
+.search__trial_btn a {
+  color: #1a55d4;
+  text-decoration: underline;
+  line-height: 1.55;
+  font-size: 1.45rem;
+  font-weight: bold;
+  letter-spacing: .04em;
+}
+.search__trial_btn a:hover {
+  text-decoration: none;
+  filter: brightness(1.03);
+}
+.search__trial_btn span {
+  background: #fff5c2;
+  background:linear-gradient(45deg, #ffdf40 0%, #fff4bd 50%, #ffdf40 100%);
+  padding: 3px 6px;
+  border-radius: 2px;
+  position: relative;
+}
+.search__trial_btn strong {
+  font-weight: bold;
+  color: #ff0000;
+}
+.search__trial_btn em {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.search__trial_btn b {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+
+
+
+
+/*エリア別ページ（spot）*/
+
+
+/*メイン画像*/
+.search_spot__key {
+}
+.search_spot__key_block {
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+.search_spot__key_image {
+}
+.search_spot__key_image picture {
+}
+.search_spot__key_image picture img,
+.search_spot__key_image picture source {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.search_spot__key_info {
+  max-width: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+.search_spot__key_info_title {
+  font-size: 4rem;
+  line-height: 1.4;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0,0,0,.4), 0 0 5px rgba(0,0,0,.4), 0 0 10px rgba(0,0,0,.4), 0 0 10px rgba(0,0,0,.4), 0 0 15px rgba(0,0,0,.4), 0 0 15px rgba(0,0,0,.4);
+  font-family: YuGothic, "Yu Gothic medium", "Hiragino Sans", Meiryo, "sans-serif";
+}
+
+
+/*メイン文章*/
+.search_spot__primary {
+}
+.search_spot__primary_block {
+  max-width: 1000px;
+  padding: 25px 15px;
+  margin: 0 auto;
+}
+.search_spot__primary_txt {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.7;
+}
+.search_spot__primary_subtxt {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  margin: 15px 0 0;
+}
+.search_spot__primary_subtxt:empty {
+  display: none;
+}
+.search_spot__primary_subtxt::before {
+  content: "『";
+}
+.search_spot__primary_subtxt::after {
+  content: "』";
+}
+
+/*条件選択*/
+.search_spot__filter {
+  background: #195cb3;
+  background:linear-gradient(315deg, rgba(29, 106, 190, 1) 0%, rgba(21, 79, 168, 1) 50%, rgba(29, 106, 190, 1) 100%);
+}
+.search_spot__filter_block {
+  max-width: 970px;
+  padding: 30px 15px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.search_spot__filter_list {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.search_spot__filter_list_item {
+  background: #fff;
+  cursor: pointer;
+  padding: 12px 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  box-shadow: 0 0 6px rgba(0,0,0,.7);
+  width: 280px;
+}
+.search_spot__filter_list_item:not(:first-of-type) {
+  margin-left: 50px;
+}
+.search_spot__filter_list_item:not(:first-of-type)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  transform: translate(0, -50%) rotate(-135deg);
+  border: 3px solid #fff;
+  border-top: none;
+  border-right: none;
+  left: -35px;
+  top: 50%;
+}
+.search_spot__filter_list_item_txt {
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 1px 0 0;
+}
+.search_spot__filter_list_item_txt span {
+  font-size: 1.6rem;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.search_spot__filter_list_item_btn {
+  flex-shrink: 0;
+  font-size: 1.3rem;
+  color: #195cb3;
+  border: #195cb3 1px solid;
+  border-radius: 3px;
+  padding: 5px 7px;
+  margin: 0 0 0 5px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.search_spot__filter_list_item:hover .search_spot__filter_list_item_txt span {
+  color: #419ef0;
+  text-decoration: underline;
+}
+.search_spot__filter_list_item_btn:hover {
+  background: #195cb3;
+  color: #fff;
+}
+
+
+/*人気情報*/
+.search_spot__popular {
+  background: #f0f0f0;
+}
+.search_spot__popular_block {
+  max-width: 1000px;
+  padding: 35px 0 35px 0;
+  margin: 0 auto;
+}
+.search_spot__popular_block > *:not(:first-child) {
+  margin-top: 35px;
+}
+
+
+/*釣り船一覧*/
+.search_spot__shiplist {
+  background: #f0f0f0;
+}
+.search_spot__shiplist_block {
+  max-width: 1000px;
+  padding: 0 0 15px;
+  margin: 0 auto;
+}
+.search_spot__shiplist_title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 0 13px;
+  padding: 0 15px;
+}
+.search_spot__shiplist_nodata {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 50px 15px;
+  color: #fa4641;
+}
+
+
+/*エリア別ページの釣り船一覧の表示調整*/
+.search_spot__shiplist .search__shiplist_unit_plan_match {
+  display: none;
+}
+.search_spot__shiplist .search__shiplist_unit_plan_more {
+  display: none;
+}
+.search_spot__shiplist .search__shiplist_unit_plan_list {
+  margin-top: 30px;  
+}
+
+
+/*都道府県（リンクリスト）*/
+.search_spot__linklist {
+margin: 35px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
